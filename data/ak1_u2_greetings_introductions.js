@@ -30,7 +30,7 @@
 
     vocabulary: [
       { korean: "안녕하세요", english: "Hello (formal greeting)", romanization: "annyeonghaseyo", example: "안녕하세요! - Hello!", tags: ["greeting", "formal"] },
-      { korean: "안녕하세요", english: "Are you well? (traditional meaning)", romanization: "annyeonghaseyo", tags: ["greeting", "formal"] },
+      { korean: "안녕하세요?", english: "Are you well? (traditional meaning)", romanization: "annyeonghaseyo", tags: ["greeting", "formal"] },
       { korean: "안녕히 가세요", english: "Good-bye (when other person is leaving)", romanization: "annyeonghi gaseyo", tags: ["greeting"] },
       { korean: "안녕히 계세요", english: "Good-bye (when other person is staying)", romanization: "annyeonghi gyeseyo", tags: ["greeting"] },
       { korean: "저", english: "I, me (polite version)", romanization: "jeo", tags: ["pronoun"] },
