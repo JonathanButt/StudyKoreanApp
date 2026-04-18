@@ -696,7 +696,11 @@
                         </div>
                     </div>
 
-                    <div class="review-controls">
+                    <div id="revealControls" class="review-controls">
+                        <button class="control-btn good" style="flex:1; font-size:1rem;" onclick="flipCard()">Reveal Answer</button>
+                    </div>
+
+                    <div id="ratingControls" class="review-controls hidden">
                         <button class="control-btn again" onclick="recordReview('again')">Again</button>
                         <button class="control-btn hard" onclick="recordReview('hard')">Hard</button>
                         <button class="control-btn good" onclick="recordReview('good')">Good</button>
@@ -1213,6 +1217,10 @@ const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
             // Reset card flip
             document.getElementById('card').classList.remove('flipped');
 
+            // Show reveal button, hide rating buttons
+            document.getElementById('revealControls').classList.remove('hidden');
+            document.getElementById('ratingControls').classList.add('hidden');
+
             // Display unit badge and content
             const unitInfo = `${currentCard.book} Unit ${currentCard.unit}`;
             document.getElementById('unitBadge').textContent = unitInfo;
@@ -1318,6 +1326,10 @@ const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
             const card = document.getElementById('card');
             card.classList.toggle('flipped');
             cardFlipped = !cardFlipped;
+
+            // Show rating buttons only when answer is revealed
+            document.getElementById('revealControls').classList.toggle('hidden', cardFlipped);
+            document.getElementById('ratingControls').classList.toggle('hidden', !cardFlipped);
         }
 
         function recordReview(response) {
