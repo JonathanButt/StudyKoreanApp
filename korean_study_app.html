@@ -1080,7 +1080,7 @@ const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
             allCards.forEach((card, idx) => {
                 const cardId = `${unitId}_v_${idx}`;
                 const progress = loadCardProgress(cardId);
-                if (progress.repetitions >= 3 && progress.interval >= 21) {
+                if (progress.state === 'review' && progress.interval >= 1) {
                     mastered++;
                 }
             });
