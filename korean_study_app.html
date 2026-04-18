@@ -661,7 +661,7 @@
                         📚 Study All<br><span style="font-size: 0.8rem; opacity: 0.9;">All Units Mixed</span>
                     </button>
                     <button class="action-btn secondary" onclick="startDailyReview()">
-                        ⏱️ Daily Review<br><span style="font-size: 0.8rem; opacity: 0.9;">30 Min Session</span>
+                        ⏱️ Quick Review<br><span style="font-size: 0.8rem; opacity: 0.9;">30 Card Session</span>
                     </button>
                 </div>
 
@@ -1019,9 +1019,16 @@ const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
         }
 
         // ==================== UI RENDERING ====================
+        const NAV_SCREENS = ['home', 'study', 'phrases', 'grammar', 'stats'];
+
         function showScreen(screen) {
             document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+
+            // Highlight the matching nav button by position, not by event.target,
+            // so this works when called programmatically (e.g. from startPhrasesReview)
+            document.querySelectorAll('.nav-item').forEach((btn, i) => {
+                btn.classList.toggle('active', NAV_SCREENS[i] === screen);
+            });
 
             switch(screen) {
                 case 'home':
@@ -1043,7 +1050,6 @@ const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
                     updateStats();
                     break;
             }
-            event.target.classList.add('active');
         }
 
         function renderUnits() {
@@ -1144,6 +1150,7 @@ const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
             sessionMode = 'review';
             cardFlipped = false;
             sessionStats.studied = 0;
+            sessionStats.correct = 0;
             sessionStats.streak = 0;
 
             if (currentCards.length === 0) {
@@ -1169,6 +1176,7 @@ const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
             currentUnit = null;
             cardFlipped = false;
             sessionStats.studied = 0;
+            sessionStats.correct = 0;
             sessionStats.streak = 0;
 
             showScreen('study');
@@ -1194,6 +1202,7 @@ const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
             currentUnit = null;
             cardFlipped = false;
             sessionStats.studied = 0;
+            sessionStats.correct = 0;
             sessionStats.streak = 0;
 
             showScreen('study');
@@ -1207,6 +1216,7 @@ const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
             sessionMode = 'quiz';
             cardFlipped = false;
             sessionStats.studied = 0;
+            sessionStats.correct = 0;
             sessionStats.streak = 0;
 
             showScreen('study');
@@ -1668,8 +1678,8 @@ const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
             }
 
             // Phrases act exactly like vocab cards — same FSRS, same card flip UI.
-            // We shuffle them and hand off to the study screen.
-            const cards = shuffleArray(phrases.map(p => ({
+            // Build card list and shuffle (Fisher-Yates)
+            const cards = phrases.map(p => ({
                 id:           p.id,
                 korean:       p.korean,
                 english:      p.english,
@@ -1678,17 +1688,18 @@ const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
                 tags:         ['phrase', p.category],
                 book:         'Phrases',
                 unit:         p.category,
-            })));
+            }));
+            // Fisher-Yates shuffle
+            for (let i = cards.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [cards[i], cards[j]] = [cards[j], cards[i]];
+            }
 
             currentCards     = cards;
             currentCardIndex = 0;
             sessionStats     = { studied: 0, correct: 0, streak: 0 };
 
             showScreen('study');
-            // Manually activate the Study nav item (showScreen uses event.target which is wrong here)
-            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-            document.querySelector('.nav-item:nth-child(2)').classList.add('active');
-
             displayCard();
         }
 
