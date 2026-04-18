@@ -804,7 +804,7 @@
     <script src="data/ak2_u2_weather_seasons.js"></script>
     <script src="data/ak2_u3_food_restaurants.js"></script>
     <script src="data/ak2_u4_transportation_travel.js"></script>
-    <script src="phrases.js"></script>
+    <script src="data/phrases.js"></script>
     <script>
 // Assembled from unit files above
 const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
@@ -1346,7 +1346,23 @@ const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
 
             sessionStats.studied++;
             currentCardIndex++;
-            displayCard();
+
+            if (cardFlipped) {
+                // Card is showing the back (answer). Blank the front face first so the
+                // next card's content isn't visible while the flip-back animates.
+                document.getElementById('unitBadge').textContent = '';
+                document.getElementById('cardKorean').textContent = '';
+
+                // Flip back to front (animation takes 0.6s per CSS)
+                document.getElementById('card').classList.remove('flipped');
+                cardFlipped = false;
+
+                // Populate the next card only after the animation finishes
+                setTimeout(displayCard, 620);
+            } else {
+                // Card was never flipped — no animation needed
+                displayCard();
+            }
         }
 
         function recordReviewData(progress, response) {
@@ -1526,7 +1542,7 @@ const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
 
             if (typeof PHRASES_DATA === 'undefined' || PHRASES_DATA.length === 0) {
                 document.getElementById('phraseList').innerHTML =
-                    '<p style="color:#999; text-align:center; margin-top:2rem;">No phrases loaded. Make sure phrases.js is in the same folder as the HTML file.</p>';
+                    '<p style="color:#999; text-align:center; margin-top:2rem;">No phrases loaded. Make sure data/phrases.js exists in the data folder.</p>';
                 return;
             }
 
