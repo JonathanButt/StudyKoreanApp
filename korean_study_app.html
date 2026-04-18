@@ -784,6 +784,14 @@
 
                 <h2 style="font-size: 1.3rem; margin-bottom: 1rem; color: #333;">Unit Mastery</h2>
                 <div id="masteryList" class="unit-mastery-list"></div>
+
+                <h2 style="font-size: 1.3rem; margin: 1.5rem 0 0.75rem; color: #333;">Backup & Restore</h2>
+                <p style="font-size: 0.85rem; color: #888; margin-bottom: 1rem;">Progress is stored in your browser. Export it to keep a backup or move it to another device.</p>
+                <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                    <button onclick="exportProgress()" style="flex:1; padding: 0.8rem; background: #c84b4b; color: white; border: none; border-radius: 8px; font-family: inherit; font-size: 0.9rem; font-weight: 600; cursor: pointer;">⬇ Export Progress</button>
+                    <button onclick="document.getElementById('importFile').click()" style="flex:1; padding: 0.8rem; background: #f0e8e0; color: #c84b4b; border: 2px solid #c84b4b; border-radius: 8px; font-family: inherit; font-size: 0.9rem; font-weight: 600; cursor: pointer;">⬆ Import Progress</button>
+                    <input type="file" id="importFile" accept=".json" style="display:none" onchange="importProgress(event)">
+                </div>
             </div>
         </div>
 
@@ -1678,6 +1686,46 @@ const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
             document.querySelector('.nav-item:nth-child(2)').classList.add('active');
 
             displayCard();
+        }
+
+        // ==================== BACKUP & RESTORE ====================
+        function exportProgress() {
+            const backup = { version: 1, exportedAt: new Date().toISOString(), data: {} };
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key.startsWith('card_') || key === 'sessionStats') {
+                    backup.data[key] = localStorage.getItem(key);
+                }
+            }
+            const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
+            const url  = URL.createObjectURL(blob);
+            const a    = document.createElement('a');
+            const date = new Date().toISOString().slice(0, 10);
+            a.href     = url;
+            a.download = `korean_study_backup_${date}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function importProgress(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                try {
+                    const backup = JSON.parse(e.target.result);
+                    if (!backup.data) throw new Error('Invalid backup file.');
+                    const count = Object.keys(backup.data).length;
+                    if (!confirm(`This will restore ${count} progress records from ${backup.exportedAt ? backup.exportedAt.slice(0,10) : 'unknown date'}.\n\nYour current progress will be overwritten. Continue?`)) return;
+                    Object.entries(backup.data).forEach(([key, val]) => localStorage.setItem(key, val));
+                    alert(`Restored ${count} records successfully.`);
+                    updateStats();
+                } catch (err) {
+                    alert('Could not read backup file: ' + err.message);
+                }
+                event.target.value = '';
+            };
+            reader.readAsText(file);
         }
 
         // ==================== INIT ====================
