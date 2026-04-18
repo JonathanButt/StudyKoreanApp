@@ -660,7 +660,7 @@
                     <button class="action-btn primary" onclick="startMixedReview()">
                         📚 Study All<br><span style="font-size: 0.8rem; opacity: 0.9;">All Units Mixed</span>
                     </button>
-                    <button class="action-btn secondary" onclick="startDailyReview()">
+                    <button class="action-btn secondary" onclick="startQuickReview()">
                         ⏱️ Quick Review<br><span style="font-size: 0.8rem; opacity: 0.9;">30 Card Session</span>
                     </button>
                 </div>
@@ -1183,7 +1183,7 @@ const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
             displayCard();
         }
 
-        function startDailyReview() {
+        function startQuickReview() {
             // 30-minute session with weak cards
             const dueCards = getDueCards();
             currentCards = dueCards.sort((a, b) => {
