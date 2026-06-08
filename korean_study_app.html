@@ -1284,19 +1284,31 @@ const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
         }
 
         function getAllCards() {
+            const seen = new Map(); // korean text → index in cards array
             const cards = [];
             KOREAN_DATA.units.forEach(unit => {
                 unit.vocabulary.forEach((vocab, idx) => {
                     const cardId = `${unit.id}_v_${idx}`;
                     const progress = loadCardProgress(cardId);
-                    cards.push({
+                    const card = {
                         id: cardId,
                         unitId: unit.id,
                         unit: unit.unit,
                         book: unit.book,
                         ...vocab,
                         progress: progress
-                    });
+                    };
+                    const key = vocab.korean;
+                    if (seen.has(key)) {
+                        // Keep whichever copy has more review history
+                        const existing = cards[seen.get(key)];
+                        if ((progress.timesReviewed || 0) > (existing.progress.timesReviewed || 0)) {
+                            cards[seen.get(key)] = card;
+                        }
+                    } else {
+                        seen.set(key, cards.length);
+                        cards.push(card);
+                    }
                 });
             });
             return cards;
