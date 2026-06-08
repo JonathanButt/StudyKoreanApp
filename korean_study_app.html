@@ -776,6 +776,21 @@
                     <p>Active Korean 1 & 2 Study App</p>
                 </div>
 
+                <!-- Search -->
+                <div style="position: relative; margin-bottom: 1.5rem;">
+                    <input
+                        id="homeSearch"
+                        type="text"
+                        placeholder="Search Korean or English…"
+                        oninput="renderHomeSearch(this.value)"
+                        autocomplete="off"
+                        style="width: 100%; padding: 0.85rem 1rem 0.85rem 2.6rem; border: 2px solid #e0d5cc; border-radius: 12px; font-family: 'Noto Sans KR', sans-serif; font-size: 1rem; background: white; color: #333; outline: none; box-shadow: 0 2px 8px rgba(0,0,0,0.06);"
+                    >
+                    <span style="position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%); font-size: 1rem; pointer-events: none; opacity: 0.4;">🔍</span>
+                    <button id="homeSearchClear" onclick="clearHomeSearch()" style="display:none; position: absolute; right: 0.7rem; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 1.1rem; color: #aaa; cursor: pointer; padding: 0; line-height: 1;">✕</button>
+                </div>
+                <div id="homeSearchResults" style="display:none; margin-bottom: 1.5rem;"></div>
+
                 <button class="action-btn" onclick="showScreen('wordStrength')" style="width: 100%; margin-bottom: 1.5rem; background: white; color: #333; border: 2px solid #e0d5cc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
                     📊 Words by Strength<br><span style="font-size: 0.8rem; opacity: 0.7;">See all words ranked</span>
                 </button>
@@ -1671,6 +1686,62 @@ const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
                 `;
                 content.appendChild(card);
             });
+        }
+
+        // ==================== HOME SEARCH ====================
+        function renderHomeSearch(query) {
+            const resultsEl = document.getElementById('homeSearchResults');
+            const clearBtn  = document.getElementById('homeSearchClear');
+            const q = query.trim().toLowerCase();
+
+            clearBtn.style.display = q ? 'block' : 'none';
+
+            if (!q) {
+                resultsEl.style.display = 'none';
+                resultsEl.innerHTML = '';
+                return;
+            }
+
+            const matches = getAllCards().filter(card =>
+                card.korean.toLowerCase().includes(q) ||
+                card.english.toLowerCase().includes(q) ||
+                (card.romanization || '').toLowerCase().includes(q)
+            );
+
+            if (matches.length === 0) {
+                resultsEl.style.display = 'block';
+                resultsEl.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem 0; font-size:0.9rem;">No results found.</p>';
+                return;
+            }
+
+            resultsEl.style.display = 'block';
+            resultsEl.innerHTML = '';
+
+            matches.forEach(card => {
+                const cat      = strengthCategory(getStrengthScore(card.progress));
+                const barColor = strengthBarColor(cat);
+                const label    = strengthLabel(cat);
+
+                const row = document.createElement('div');
+                row.className = 'word-row';
+                row.innerHTML = `
+                    <div style="width:4px; height:34px; border-radius:2px; background:${barColor}; flex-shrink:0;"></div>
+                    <div style="font-size:1.05rem; font-weight:700; color:#222; min-width:90px; font-family:'Noto Sans KR',sans-serif;">${card.korean}</div>
+                    <div style="flex:1; min-width:0;">
+                        <div style="font-size:0.85rem; color:#666;">${card.english}</div>
+                        ${card.romanization ? `<div style="font-size:0.75rem; color:#aaa; font-style:italic;">${card.romanization}</div>` : ''}
+                    </div>
+                    <span class="word-badge ${cat}">${label}</span>
+                `;
+                resultsEl.appendChild(row);
+            });
+        }
+
+        function clearHomeSearch() {
+            const input = document.getElementById('homeSearch');
+            input.value = '';
+            input.focus();
+            renderHomeSearch('');
         }
 
         // ==================== WORD STRENGTH LIST ====================
