@@ -63,6 +63,49 @@
 
       // ── Particles ────────────────────────────────────────────
       { korean: "(이)나",          english: "or (between nouns; vowel → 나, consonant → 이나)", romanization: "(i)na",             example: "버스나 지하철을 타요.",                           tags: ["particle", "grammar"] },
+
+      // ── Appointments & Scheduling ────────────────────────────
+      { korean: "약속",            english: "appointment; promise",                             romanization: "yaksok",             example: "토요일에 약속이 있어요.",                          tags: ["noun", "scheduling"] },
+      { korean: "약속이 있어서",   english: "because I have an appointment",                    romanization: "yaksoigi isseoseo",  example: "약속이 있어서 못 가요.",                           tags: ["phrase", "scheduling"] },
+      { korean: "약속이 있다",     english: "to have an appointment/promise",                   romanization: "yaksoigi itda",      example: "일요일에 약속이 있어요.",                          tags: ["phrase"] },
+
+      // ── Adverb ───────────────────────────────────────────────
+      { korean: "많이",            english: "a lot; much (adverb — placed before a verb)",      romanization: "mani",               example: "많이 먹었어요.",                                   tags: ["adverb"] },
+
+      // ── Adjectives (ㅂ irregular) ─────────────────────────────
+      { korean: "작다",            english: "to be small",                                      romanization: "jakda",              example: "이 가방이 작아요.",                                tags: ["adjective"] },
+      { korean: "어렵다",          english: "to be difficult; hard (ㅂ irregular: 어려워요)",   romanization: "eoryeopda",          example: "한국어가 어려워요.",                               tags: ["adjective"] },
+      { korean: "덥다",            english: "to be hot/warm — weather (ㅂ irregular: 더워요)",  romanization: "deopda",             example: "오늘 날씨가 더워요.",                              tags: ["adjective", "weather"] },
+      { korean: "춥다",            english: "to be cold — weather (ㅂ irregular: 추워요)",      romanization: "chupda",             example: "겨울에 추워요.",                                   tags: ["adjective", "weather"] },
+      { korean: "맵다",            english: "to be spicy (ㅂ irregular: 매워요)",               romanization: "maepda",             example: "김치가 매워요.",                                   tags: ["adjective", "food"] },
+
+      // ── Verbs ────────────────────────────────────────────────
+      { korean: "수영하다",        english: "to swim",                                          romanization: "suyeonghada",        example: "여름에 수영해요.",                                 tags: ["verb", "sport"] },
+      { korean: "돈을 쓰다",       english: "to spend money",                                   romanization: "doneul sseuda",      example: "백화점에서 돈을 많이 써요.",                       tags: ["verb", "shopping"] },
+      { korean: "깎다",            english: "to cut (price); to bargain; to reduce",            romanization: "kkakda",             example: "좀 깎아 주세요.",                                  tags: ["verb", "shopping"] },
+      { korean: "늦다",            english: "to be late",                                       romanization: "neutda",             example: "늦어서 죄송합니다.",                               tags: ["verb", "adjective"] },
+      { korean: "연락하다",        english: "to contact someone; to get in touch",              romanization: "yeollakhada",        example: "내일 연락할게요.",                                 tags: ["verb"] },
+      { korean: "지키다",          english: "to keep (a promise/appointment); to protect",      romanization: "jikida",             example: "약속을 꼭 지킬게요.",                              tags: ["verb"] },
+      { korean: "도와주다",        english: "to help (someone)",                                romanization: "dowajuda",           example: "도와줘서 고마워요.",                               tags: ["verb"] },
+      { korean: "초대하다",        english: "to invite",                                        romanization: "chodaehada",         example: "파티에 초대할게요.",                               tags: ["verb"] },
+      { korean: "초대받다",        english: "to be invited",                                    romanization: "chodaebatda",        example: "파티에 초대받았어요.",                             tags: ["verb"] },
+      { korean: "빨래하다",        english: "to do laundry",                                    romanization: "ppallaehada",        example: "토요일에 빨래해요.",                               tags: ["verb", "household"] },
+      { korean: "청소하다",        english: "to clean (a place)",                               romanization: "cheongsohada",       example: "집을 청소했어요.",                                 tags: ["verb", "household"] },
+
+      // ── Nouns ─────────────────────────────────────────────────
+      { korean: "수영",            english: "swimming",                                         romanization: "suyeong",            example: "수영을 좋아해요.",                                 tags: ["noun", "sport"] },
+      { korean: "표",              english: "ticket",                                           romanization: "pyo",                example: "영화 표가 없어요.",                                tags: ["noun"] },
+      { korean: "휴일",            english: "holiday; day off",                                 romanization: "hyuil",              example: "내일은 휴일이라서 회사에 안 가요.",                tags: ["noun", "time"] },
+      { korean: "연락",            english: "contact; getting in touch",                        romanization: "yeollak",            example: "연락이 늦어서 죄송합니다.",                        tags: ["noun"] },
+      { korean: "밤늦게",          english: "late at night",                                    romanization: "bamneutge",          example: "밤늦게 전화해서 죄송합니다.",                      tags: ["adverb", "time"] },
+
+      // ── Apologies & Gratitude (Additional Expressions) ───────
+      { korean: "죄송합니다",      english: "I'm sorry (most polite)",                          romanization: "joesonghamnida",     example: "늦어서 죄송합니다.",                               tags: ["expression", "apology"] },
+      { korean: "미안합니다",      english: "I'm sorry (formal)",                               romanization: "mianhamnida",        example: "약속을 못 지켜서 미안합니다.",                     tags: ["expression", "apology"] },
+      { korean: "미안해요",        english: "I'm sorry (familiar/informal polite)",             romanization: "mianhaeyo",          example: "늦어서 미안해요.",                                 tags: ["expression", "apology"] },
+      { korean: "미안하지만",      english: "I'm sorry but... (polite refusal prefix)",         romanization: "mianhajiman",        example: "미안하지만 일요일에는 일이 있어요.",               tags: ["expression", "apology"] },
+      { korean: "감사합니다",      english: "thank you (most common/formal)",                   romanization: "gamsahamnida",       example: "도와주셔서 감사합니다.",                           tags: ["expression", "gratitude"] },
+      { korean: "고맙습니다",      english: "thank you (formal, slightly warmer than 감사합니다)", romanization: "gomapseumnida",   example: "초대해 주셔서 고맙습니다.",                        tags: ["expression", "gratitude"] },
     ],
 
     grammar: [
