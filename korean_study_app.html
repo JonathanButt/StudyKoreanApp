@@ -908,11 +908,9 @@
 
             <!-- Grammar Screen -->
             <div id="grammarScreen" class="screen">
-                <h1 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Grammar Patterns</h1>
-
-                <div style="margin-bottom: 1.5rem;">
-                    <label style="color: #666; font-weight: 500;">Select Unit:</label>
-                    <select id="grammarUnitSelect" onchange="updateGrammarDisplay()" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; margin-top: 0.5rem; font-family: 'Noto Sans KR', sans-serif; font-size: 1rem;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <h1 style="font-size: 1.5rem; margin: 0; flex: 1;">Grammar Patterns</h1>
+                    <select id="grammarUnitSelect" onchange="updateGrammarDisplay()" style="padding: 0.5rem 0.75rem; border: 1px solid #ddd; border-radius: 8px; font-family: 'Noto Sans KR', sans-serif; font-size: 0.9rem; color: #555; max-width: 160px;">
                     </select>
                 </div>
 
@@ -1660,7 +1658,7 @@ const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
         // ==================== GRAMMAR ====================
         function initGrammarSelect() {
             const select = document.getElementById('grammarUnitSelect');
-            select.innerHTML = '<option value="">Select a unit...</option>';
+            select.innerHTML = '<option value="all">All Units</option>';
 
             KOREAN_DATA.units.forEach(unit => {
                 const option = document.createElement('option');
@@ -1668,14 +1666,49 @@ const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
                 option.textContent = `${unit.book} Unit ${unit.unit} - ${unit.title}`;
                 select.appendChild(option);
             });
+
+            select.value = 'all';
+        }
+
+        function renderGrammarPatterns(content, unit) {
+            unit.grammar.forEach(pattern => {
+                const card = document.createElement('div');
+                card.className = 'grammar-card';
+                card.innerHTML = `
+                    <div class="grammar-pattern">${pattern.pattern}</div>
+                    <div class="grammar-explanation">${pattern.explanation}</div>
+                    ${pattern.examples && pattern.examples.length > 0 ? `
+                    <div class="grammar-examples">
+                        ${pattern.examples.map(ex => `<div class="grammar-example">${ex}</div>`).join('')}
+                    </div>` : ''}
+                `;
+                content.appendChild(card);
+            });
         }
 
         function updateGrammarDisplay() {
             const unitId = document.getElementById('grammarUnitSelect').value;
             const content = document.getElementById('grammarContent');
+            content.innerHTML = '';
 
-            if (!unitId) {
-                content.innerHTML = '<p class="empty-state">Select a unit to view grammar patterns</p>';
+            if (unitId === 'all') {
+                let total = 0;
+                KOREAN_DATA.units.forEach(unit => {
+                    if (!unit.grammar || unit.grammar.length === 0) return;
+                    total += unit.grammar.length;
+
+                    const header = document.createElement('div');
+                    header.style.cssText = 'margin: 1.5rem 0 0.75rem; padding-bottom: 0.4rem; border-bottom: 2px solid #e0d5cc;';
+                    header.innerHTML = `
+                        <span style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:#999; font-weight:600;">${unit.book}</span>
+                        <div style="font-size:1.1rem; font-weight:700; color:#333;">Unit ${unit.unit}: ${unit.title}</div>
+                    `;
+                    content.appendChild(header);
+                    renderGrammarPatterns(content, unit);
+                });
+                if (total === 0) {
+                    content.innerHTML = '<p class="empty-state">No grammar patterns found.</p>';
+                }
                 return;
             }
 
@@ -1684,22 +1717,7 @@ const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
                 content.innerHTML = '<p class="empty-state">No grammar patterns for this unit</p>';
                 return;
             }
-
-            content.innerHTML = '';
-            unit.grammar.forEach(pattern => {
-                const card = document.createElement('div');
-                card.className = 'grammar-card';
-                card.innerHTML = `
-                    <div class="grammar-pattern">${pattern.pattern}</div>
-                    <div class="grammar-explanation">${pattern.explanation}</div>
-                    <div class="grammar-examples">
-                        ${pattern.examples.map(ex => `
-                            <div class="grammar-example">${ex}</div>
-                        `).join('')}
-                    </div>
-                `;
-                content.appendChild(card);
-            });
+            renderGrammarPatterns(content, unit);
         }
 
         // ==================== HOME SEARCH ====================
