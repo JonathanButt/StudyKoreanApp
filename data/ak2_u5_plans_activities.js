@@ -66,8 +66,8 @@
 
       // ── Appointments & Scheduling ────────────────────────────
       { korean: "약속",            english: "appointment; promise",                             romanization: "yaksok",             example: "토요일에 약속이 있어요.",                          tags: ["noun", "scheduling"] },
-      { korean: "약속이 있어서",   english: "because I have an appointment",                    romanization: "yaksoigi isseoseo",  example: "약속이 있어서 못 가요.",                           tags: ["phrase", "scheduling"] },
-      { korean: "약속이 있다",     english: "to have an appointment/promise",                   romanization: "yaksoigi itda",      example: "일요일에 약속이 있어요.",                          tags: ["phrase"] },
+      { korean: "약속이 있어서",   english: "because I have an appointment",                    romanization: "yaksogi isseoseo",   example: "약속이 있어서 못 가요.",                           tags: ["phrase", "scheduling"] },
+      { korean: "약속이 있다",     english: "to have an appointment/promise",                   romanization: "yaksogi itda",       example: "일요일에 약속이 있어요.",                          tags: ["phrase"] },
 
       // ── Adverb ───────────────────────────────────────────────
       { korean: "많이",            english: "a lot; much (adverb — placed before a verb)",      romanization: "mani",               example: "많이 먹었어요.",                                   tags: ["adverb"] },
@@ -106,6 +106,16 @@
       { korean: "미안하지만",      english: "I'm sorry but... (polite refusal prefix)",         romanization: "mianhajiman",        example: "미안하지만 일요일에는 일이 있어요.",               tags: ["expression", "apology"] },
       { korean: "감사합니다",      english: "thank you (most common/formal)",                   romanization: "gamsahamnida",       example: "도와주셔서 감사합니다.",                           tags: ["expression", "gratitude"] },
       { korean: "고맙습니다",      english: "thank you (formal, slightly warmer than 감사합니다)", romanization: "gomapseumnida",   example: "초대해 주셔서 고맙습니다.",                        tags: ["expression", "gratitude"] },
+
+      // ── Time / Scheduling ─────────────────────────────────────
+      { korean: "이번주",          english: "this week",                                        romanization: "ibeonju",            example: "이번주에 뭐 해요?",                                tags: ["time"] },
+      { korean: "다음주",          english: "next week",                                        romanization: "daeumju",            example: "다음주에 시험이 있어요.",                          tags: ["time"] },
+      { korean: "방학",            english: "school break, vacation (for students)",            romanization: "banghak",            example: "여름 방학에 여행했어요.",                          tags: ["noun", "time"] },
+
+      // ── Verbs ─────────────────────────────────────────────────
+      { korean: "때리다",          english: "to hit, to strike, to beat",                       romanization: "ttaerida",           example: "때리면 안 돼요.",                                  tags: ["verb"] },
+      { korean: "넘어지다",        english: "to fall down, to trip and fall",                   romanization: "neomeojida",         example: "미끄러워서 넘어졌어요.",                           tags: ["verb"] },
+      { korean: "자전거를 타다",   english: "to ride a bike",                                   romanization: "jajeongeoreul tada",  example: "공원에서 자전거를 타요.",                         tags: ["verb", "phrase"] },
     ],
 
     grammar: [
@@ -151,6 +161,26 @@
           "아주 비싸요. (It's very expensive.)",
           "너무 매워요. (It's too spicy.)",
           "많이 먹었어요. (I ate a lot.)"
+        ]
+      },
+      {
+        pattern: "못 (preverbal negation)",
+        explanation: "못 = can't / couldn't — expresses inability or impossibility. Implies you wanted to, but something prevented you. Contrast with 안 (deliberate choice not to). Place 못 directly before the verb.",
+        examples: [
+          "숙제 못 했어요. — I couldn't do my homework. (something got in the way)",
+          "숙제 안 했어요. — I didn't do my homework. (deliberate choice)",
+          "오늘 일 못 했어요. — I couldn't work today.",
+          "피곤해서 책을 못 읽어요. — I'm too tired to read the book."
+        ]
+      },
+      {
+        pattern: "-(아/어)서 — reason clause",
+        explanation: "Because (reason) + result. Connect two clauses where the first is the reason for the second. Note: no past-tense stem before 서 — context tells you it was past.",
+        examples: [
+          "피곤해서 못 만났어요. — I couldn't meet (my friend) because I was tired.",
+          "비싸서 안 샀어요. — I didn't buy it because it's expensive.",
+          "길이 복잡해서 지하철을 타요. — The road is busy so I take the subway.",
+          "구두가 비싸서 안 샀어요. — The shoes were expensive so I didn't buy them."
         ]
       }
     ]

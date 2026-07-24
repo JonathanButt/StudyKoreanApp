@@ -95,10 +95,29 @@
       { korean: "여행을 가다",     english: "to go on a trip",                                  romanization: "yeohaengeul gada",   example: "한국에 여행을 갈 거예요.",                         tags: ["phrase"] },
       { korean: "한복",            english: "hanbok (traditional Korean costume)",               romanization: "hanbok",             example: "설날에 한복을 입어요.",                            tags: ["noun", "culture"] },
       { korean: "괜찮다",          english: "to be alright; fine; okay",                        romanization: "gwaenchanta",        example: "괜찮아요.",                                        tags: ["adjective", "expression"] },
-      { korean: "배고프다",        english: "to be hungry",                                     romanization: "baegoproda",         example: "배고프면 뭐 먹어요?",                              tags: ["adjective"] },
-      { korean: "사전",            english: "dictionary",                                       romanization: "sajeон",             example: "사전으로 단어를 찾아요.",                          tags: ["noun"] },
+      { korean: "배고프다",        english: "to be hungry",                                     romanization: "baegopeuda",         example: "배고프면 뭐 먹어요?",                              tags: ["adjective"] },
+      { korean: "사전",            english: "dictionary",                                       romanization: "sajeon",             example: "사전으로 단어를 찾아요.",                          tags: ["noun"] },
       { korean: "한 달쯤 걸려요",  english: "It takes about a month",                           romanization: "han daljjeum geollyeyo", example: "미국까지 한 달쯤 걸려요.",                  tags: ["phrase", "time"] },
       { korean: "다 팔았어요",     english: "Did you sell everything? / All sold out",          romanization: "da parasseoyo",      example: "다 팔았어요?",                                     tags: ["phrase"] },
+
+      // ── Age Counters ─────────────────────────────────────────
+      { korean: "세",              english: "age counter (Sino-Korean, slightly more formal: 삼십육세 = 36 years old)", romanization: "se", example: "삼십 세예요.",                    tags: ["counter", "age"] },
+      { korean: "살",              english: "age counter (pure Korean, most common: 서른 여섯 살)", romanization: "sal", example: "서른 살이에요.",                                      tags: ["counter", "age"] },
+      { korean: "후에",            english: "after; in (from now)", romanization: "hue",        example: "일년 후에 한국에 갈 거예요.",                                                    tags: ["particle", "time"] },
+      { korean: "무슨",            english: "what (kind of); which — used before a noun", romanization: "museun", example: "무슨 요일이에요? / 무슨 색이에요?",                          tags: ["question"] },
+
+      // ── Vocabulary from July notes ───────────────────────────
+      { korean: "독립",            english: "independence", romanization: "dongnip",             example: "독립 기념일이에요.",                                                             tags: ["noun", "culture"] },
+      { korean: "기념일",          english: "anniversary, commemorative day", romanization: "ginyeomil", example: "결혼 기념일이에요.",                                                  tags: ["noun", "time"] },
+      { korean: "독립 기념일",     english: "Independence Day", romanization: "dongnip ginyeomil", example: "7월 4일은 독립 기념일이에요.",                                              tags: ["noun", "culture"] },
+      { korean: "이사하다",        english: "to move (residence), to relocate", romanization: "isahada", example: "내년에 한국으로 이사할 거예요.",                                        tags: ["verb"] },
+      { korean: "벌다",            english: "to earn (money)", romanization: "beolda",           example: "일하면 돈을 벌어요.",                                                            tags: ["verb"] },
+      { korean: "인연",            english: "a fated connection, a tie between people", romanization: "inyeon", example: "우리는 인연이에요.",                                           tags: ["noun", "culture"] },
+      { korean: "운명",            english: "destiny, fate", romanization: "unmyeong",           example: "운명이에요!",                                                                    tags: ["noun", "culture"] },
+      { korean: "슬프다",          english: "to be sad (ㅡ irregular: 슬퍼요)", romanization: "seulpeuda", example: "슬프면 울어요.",                                                    tags: ["adjective", "emotion"] },
+      { korean: "예약하다",        english: "to make a reservation; to book", romanization: "yeyakhada", example: "호텔을 예약할 거예요.",                                                 tags: ["verb"] },
+      { korean: "바다",            english: "ocean, sea", romanization: "bada",                  example: "여름에 바다에 갈 거예요.",                                                       tags: ["noun", "nature"] },
+      { korean: "사진을 찍다",     english: "to take a photo/picture", romanization: "sajineul jjikda", example: "바다에서 사진을 찍을 거예요.",                                         tags: ["phrase", "verb"] },
     ],
 
     grammar: [

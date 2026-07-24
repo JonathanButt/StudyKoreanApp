@@ -52,7 +52,13 @@
       { korean: "제", english: "my (with those you respect)", romanization: "je", tags: ["possessive"] },
       { korean: "의", english: "possessive ('s), pronounced 에", romanization: "ui", tags: ["particle", "possessive"] },
       { korean: "우리", english: "we, our; my (family, house, work title, pets)", romanization: "uri", tags: ["possessive"] },
-      { korean: "내", english: "my (with friends/younger people)", romanization: "nae", tags: ["possessive"] }
+      { korean: "내", english: "my (with friends/younger people)", romanization: "nae", tags: ["possessive"] },
+      { korean: "컵", english: "cup", romanization: "keop", example: "커피 컵이에요.", tags: ["noun", "object"] },
+      { korean: "접시", english: "plate, dish", romanization: "jeopsi", example: "접시에 음식이 있어요.", tags: ["noun", "object"] },
+      { korean: "여기요", english: "Excuse me! (to get the attention of staff/server)", romanization: "yeogiyo", example: "여기요! 물 주세요.", tags: ["expression"] },
+      { korean: "잠깐만", english: "just a moment, wait a second", romanization: "jamkkanman", example: "잠깐만요!", tags: ["expression"] },
+      { korean: "기다리다", english: "to wait", romanization: "gidarida", example: "잠깐 기다려 주세요.", tags: ["verb"] },
+      { korean: "여기 있어요", english: "here it is, here you go", romanization: "yeogi isseoyo", example: "여기 있어요!", tags: ["expression"] }
     ],
 
     grammar: [
@@ -85,6 +91,16 @@
         pattern: "저 + noun = that ___ (far)",
         explanation: "Demonstrative adjective for objects far from both speaker and listener",
         examples: ["저 바지 - those pants (far away)"]
+      },
+      {
+        pattern: "V-(으)세요",
+        explanation: "Polite command or request. Attach 세요 after a vowel stem, 으세요 after a consonant stem.",
+        examples: ["앉으세요 - Please sit down", "보세요 - Please look", "드세요 - Please eat", "기다려 주세요 - Please wait (for me)"]
+      },
+      {
+        pattern: "noun + 하고 + noun",
+        explanation: "'And' used between nouns (spoken/casual). Joins two or more items together.",
+        examples: ["사전하고 책이 있어요 - There is a dictionary and a book", "컵하고 접시를 주세요 - Please give me a cup and a plate"]
       }
     ]
   };

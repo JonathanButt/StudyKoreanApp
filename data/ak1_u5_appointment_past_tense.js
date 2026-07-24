@@ -35,8 +35,8 @@
       { korean: "언제", english: "when", romanization: "eonje", tags: ["question", "time"] },
       { korean: "어제", english: "yesterday", romanization: "eoje", tags: ["time"] },
       { korean: "내일", english: "tomorrow", romanization: "naeil", tags: ["time"] },
-      { korean: "모레", english: "day after tomorrow", romanization: "moare", tags: ["time"] },
-      { korean: "내일 모레", english: "day after tomorrow", romanization: "naeil moare", tags: ["time"] },
+      { korean: "모레", english: "day after tomorrow", romanization: "more", tags: ["time"] },
+      { korean: "내일 모레", english: "day after tomorrow", romanization: "naeil more", tags: ["time"] },
       { korean: "오늘", english: "today", romanization: "oneul", tags: ["time"] },
       { korean: "주말", english: "weekend", romanization: "jumal", tags: ["time"] },
       { korean: "월요일", english: "Monday", romanization: "woryoil", tags: ["day"] },
@@ -53,7 +53,7 @@
       { korean: "오전", english: "AM", romanization: "ojeon", tags: ["time"] },
       { korean: "오후", english: "PM, afternoon", romanization: "ohu", tags: ["time"] },
       { korean: "아침", english: "morning, breakfast", romanization: "achim", tags: ["time", "meal"] },
-      { korean: "점심", english: "lunch", romanization: "jeolbjeom", tags: ["meal"] },
+      { korean: "점심", english: "lunch", romanization: "jeomsim", tags: ["meal"] },
       { korean: "저녁", english: "evening, dinner", romanization: "jeonyeok", tags: ["time", "meal"] },
       { korean: "밤", english: "night", romanization: "bam", tags: ["time"] },
       { korean: "새벽", english: "past midnight, early morning", romanization: "saebyeok", tags: ["time"] },
@@ -66,8 +66,32 @@
       { korean: "만들다", english: "to make", romanization: "mandeulda", tags: ["verb"] },
       { korean: "팔다", english: "to sell", romanization: "palda", tags: ["verb"] },
       { korean: "놀다", english: "to play, to hang out, to spend time for fun", romanization: "nolda", tags: ["verb"] },
-      { korean: "산책하다", english: "to take a walk", romanization: "sanchaekha da", tags: ["verb"] },
-      { korean: "등산하다", english: "to hike", romanization: "deungsan hada", tags: ["verb"] }
+      { korean: "산책하다", english: "to take a walk", romanization: "sanchaek hada", tags: ["verb"] },
+      { korean: "등산하다", english: "to hike", romanization: "deungsan hada", tags: ["verb"] },
+      { korean: "일어나다", english: "to wake up, to get up", romanization: "ireonada", example: "몇 시에 일어나요?", tags: ["verb", "daily-routine"] },
+      { korean: "세수하다", english: "to wash one's face", romanization: "sesuhada", example: "아침에 세수해요.", tags: ["verb", "daily-routine"] },
+      { korean: "이를 닦다", english: "to brush one's teeth", romanization: "ireul dakda", example: "이를 닦았어요.", tags: ["verb", "daily-routine"] },
+      { korean: "이", english: "tooth (pure Korean)", romanization: "i", example: "이가 아파요.", tags: ["noun", "body"] },
+      { korean: "닦다", english: "to wipe, to clean, to brush", romanization: "dakda", example: "이를 닦아요.", tags: ["verb"] },
+      { korean: "샤워하다", english: "to take a shower", romanization: "syawohada", example: "저녁에 샤워해요.", tags: ["verb", "daily-routine"] },
+      { korean: "설거지하다", english: "to wash the dishes", romanization: "seolgeojihada", example: "밥을 먹고 설거지해요.", tags: ["verb", "household"] },
+      { korean: "자다", english: "to sleep", romanization: "jada", example: "몇 시에 자요?", tags: ["verb", "daily-routine"] },
+      { korean: "일하다", english: "to work", romanization: "ilhada", example: "회사에서 일해요.", tags: ["verb"] },
+      { korean: "쇼핑하다", english: "to go shopping", romanization: "syopinghada", example: "주말에 쇼핑했어요.", tags: ["verb"] },
+      { korean: "시험을 보다", english: "to take a test/exam", romanization: "siheomeul boda", example: "내일 시험을 봐요.", tags: ["verb", "phrase"] },
+      { korean: "시", english: "o'clock (hour counter, pure Korean numbers)", romanization: "si", example: "열 시에 만나요.", tags: ["counter", "time"] },
+      { korean: "유월", english: "June (irregular pronunciation of 6월)", romanization: "yuwol", example: "유월에 여행 갔어요.", tags: ["time"] },
+      { korean: "시월", english: "October (irregular pronunciation of 10월)", romanization: "siwol", example: "시월에 날씨가 좋아요.", tags: ["time"] },
+      { korean: "그제", english: "day before yesterday", romanization: "geuje", example: "그제 뭐 했어요?", tags: ["time"] },
+      { korean: "그저께", english: "day before yesterday (alternate form)", romanization: "geujeokke", example: "그저께 친구를 만났어요.", tags: ["time"] },
+      { korean: "달리다", english: "to run (steadily)", romanization: "dallida", example: "매일 달려요.", tags: ["verb", "exercise"] },
+      { korean: "뛰다", english: "to run, to jump", romanization: "ttwida", example: "빨리 뛰어요!", tags: ["verb", "exercise"] },
+      { korean: "면접을 보다", english: "to have a job interview", romanization: "myeonjeobeul boda", example: "어제 면접을 봤어요.", tags: ["verb", "phrase"] },
+      { korean: "숙제", english: "homework", romanization: "sukje", example: "숙제를 했어요.", tags: ["noun", "school"] },
+      { korean: "하루", english: "one day (pure Korean)", romanization: "haru", example: "하루 종일 공부했어요.", tags: ["time"] },
+      { korean: "하루 종일", english: "all day long", romanization: "haru jongil", example: "하루 종일 집에 있었어요.", tags: ["time"] },
+      { korean: "작년", english: "last year", romanization: "jangnyeon", example: "작년에 한국에 갔어요.", tags: ["time"] },
+      { korean: "동안", english: "for (a duration); during", romanization: "dongan", example: "두 시간 동안 공부했어요.", tags: ["particle", "time"] }
     ],
 
     grammar: [
@@ -105,6 +129,16 @@
         pattern: "stem + 고 싶어요",
         explanation: "Want to do something",
         examples: ["놀고 싶어요 - want to play", "한국에 가고 싶어요 - want to go to Korea"]
+      },
+      {
+        pattern: "stem + -(으)ㄹ 수 있다/없다",
+        explanation: "Can / cannot (ability). Vowel stem → ㄹ 수 있다. Consonant stem → 을 수 있다.",
+        examples: ["수영할 수 있어요 - I can swim", "한국어를 할 수 있어요 - I can speak Korean", "운전할 수 없어요 - I can't drive"]
+      },
+      {
+        pattern: "-지만",
+        explanation: "But / however — contrasts two clauses. Attach 지만 directly to the verb/adjective stem.",
+        examples: ["비싸지만 사고 싶어요 - It's expensive but I want to buy it", "한국어가 어렵지만 재미있어요 - Korean is hard but fun", "오늘 많이 걸었지만 안 피곤해요 - I walked a lot today but I'm not tired"]
       }
     ]
   };

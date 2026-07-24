@@ -76,7 +76,52 @@
       { korean: "요리하다", english: "to cook", romanization: "yorihada", tags: ["verb"] },
       { korean: "요리사", english: "chef, cook", romanization: "yorisa", tags: ["occupation"] },
       { korean: "뭐 드릴까요?", english: "What would you like? (What can I get you?)", romanization: "mwo deulilkkayo", tags: ["phrase", "restaurant"] },
-      { korean: "어서 오세요", english: "Welcome, Come on in", romanization: "eoseo oseyo", tags: ["greeting"] }
+      { korean: "어서 오세요", english: "Welcome, Come on in", romanization: "eoseo oseyo", tags: ["greeting"] },
+
+      // ── Drinks & Common Foods ────────────────────────────────
+      { korean: "커피", english: "coffee", romanization: "keopi", example: "커피 한 잔 주세요.", tags: ["beverage"] },
+      { korean: "차", english: "tea", romanization: "cha", example: "따뜻한 차를 마셔요.", tags: ["beverage"] },
+      { korean: "녹차", english: "green tea", romanization: "nokcha", example: "녹차가 건강에 좋아요.", tags: ["beverage"] },
+      { korean: "맥주", english: "beer", romanization: "maekju", example: "맥주 두 병 주세요.", tags: ["beverage", "alcohol"] },
+      { korean: "우유", english: "milk", romanization: "uyu", example: "우유를 마셔요.", tags: ["beverage"] },
+      { korean: "물", english: "water", romanization: "mul", example: "물 한 잔 주세요.", tags: ["beverage"] },
+      { korean: "콜라", english: "cola", romanization: "kolla", example: "콜라를 마셔요.", tags: ["beverage"] },
+      { korean: "주스", english: "juice", romanization: "juseu", example: "오렌지 주스를 마셔요.", tags: ["beverage"] },
+
+      // ── Fruits ──────────────────────────────────────────────
+      { korean: "과일", english: "fruit", romanization: "gwail", tags: ["food", "produce"] },
+      { korean: "사과", english: "apple", romanization: "sagwa", example: "사과 두 개 주세요.", tags: ["food", "fruit"] },
+      { korean: "오렌지", english: "orange", romanization: "orenji", example: "오렌지를 먹어요.", tags: ["food", "fruit"] },
+      { korean: "포도", english: "grapes", romanization: "podo", example: "포도가 달아요.", tags: ["food", "fruit"] },
+      { korean: "바나나", english: "banana", romanization: "banana", example: "바나나를 좋아해요.", tags: ["food", "fruit"] },
+
+      // ── Bread & Western food ─────────────────────────────────
+      { korean: "빵", english: "bread", romanization: "ppang", example: "빵을 먹어요.", tags: ["food"] },
+      { korean: "파스타", english: "pasta", romanization: "peusta", example: "파스타를 먹어요.", tags: ["food"] },
+      { korean: "피자", english: "pizza", romanization: "pija", example: "피자를 주문해요.", tags: ["food"] },
+      { korean: "샌드위치", english: "sandwich", romanization: "saendeuwich", example: "샌드위치를 사요.", tags: ["food"] },
+      { korean: "김치", english: "kimchi (fermented vegetables)", romanization: "gimchi", example: "김치가 매워요.", tags: ["food", "korean"] },
+      { korean: "포도주", english: "wine (lit. grape wine)", romanization: "podoju", example: "포도주를 마셔요.", tags: ["beverage", "alcohol"] },
+      { korean: "와인", english: "wine", romanization: "wain", example: "와인 한 잔 마셔요.", tags: ["beverage", "alcohol"] },
+      { korean: "야채", english: "vegetable", romanization: "yachae", tags: ["food", "produce"] },
+      { korean: "채소", english: "vegetable (more formal)", romanization: "chaeso", tags: ["food", "produce"] },
+
+      // ── Utensils & Dishes ────────────────────────────────────
+      { korean: "컵", english: "cup", romanization: "keop", example: "컵을 주세요.", tags: ["noun", "utensil"] },
+      { korean: "접시", english: "plate, dish", romanization: "jeopsi", example: "접시에 담아 주세요.", tags: ["noun", "utensil"] },
+      { korean: "숟가락", english: "spoon", romanization: "sutgarak", example: "숟가락으로 밥을 먹어요.", tags: ["noun", "utensil"] },
+      { korean: "젓가락", english: "chopsticks", romanization: "jeotgarak", example: "젓가락을 써요.", tags: ["noun", "utensil"] },
+
+      // ── Dining Phrases ───────────────────────────────────────
+      { korean: "여기요", english: "Excuse me! (to get a server's attention)", romanization: "yeogiyo", example: "여기요! 물 주세요.", tags: ["expression", "restaurant"] },
+      { korean: "잠깐만요", english: "just a moment, one second please", romanization: "jamkkanmanyo", example: "잠깐만요!", tags: ["expression"] },
+      { korean: "기다리다", english: "to wait", romanization: "gidarida", example: "조금만 기다려 주세요.", tags: ["verb"] },
+      { korean: "여기 있어요", english: "here it is, here you go", romanization: "yeogi isseoyo", example: "주문하신 거 여기 있어요.", tags: ["expression"] },
+      { korean: "맛", english: "taste, flavor", romanization: "mat", example: "맛이 어때요?", tags: ["noun"] },
+      { korean: "맛있게 드세요", english: "enjoy your meal (honorific)", romanization: "masitge deuseyo", example: "맛있게 드세요!", tags: ["expression", "honorific"] },
+      { korean: "맵다", english: "to be spicy (ㅂ irregular: 매워요)", romanization: "maepda", example: "김치가 매워요.", tags: ["adjective", "food"] },
+      { korean: "달다", english: "to be sweet (ㄹ irregular: 달아요)", romanization: "dalda", example: "이 케이크가 달아요.", tags: ["adjective", "food"] },
+      { korean: "짜다", english: "to be salty", romanization: "jjada", example: "국이 짜요.", tags: ["adjective", "food"] }
     ],
 
     grammar: [

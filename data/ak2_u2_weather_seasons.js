@@ -29,7 +29,7 @@
     title: "Weather & Seasons",
 
     vocabulary: [
-      { korean: "날씨", english: "weather", romanization: "nalsssi", tags: ["noun", "weather"] },
+      { korean: "날씨", english: "weather", romanization: "nalssi", tags: ["noun", "weather"] },
       { korean: "날씨가 어때요?", english: "How's the weather?", romanization: "nalssiga eottaeyo", tags: ["question", "weather"] },
       { korean: "비", english: "rain", romanization: "bi", tags: ["weather"] },
       { korean: "눈", english: "snow", romanization: "nun", tags: ["weather"] },
@@ -63,9 +63,9 @@
       { korean: "빛", english: "light", romanization: "bit", tags: ["noun"] },
       { korean: "연", english: "light (not dark in color)", romanization: "yeon", tags: ["adjective"] },
       { korean: "연한", english: "light (in color)", romanization: "yeonhan", tags: ["adjective"] },
-      { korean: "짙은", english: "dark (in color)", romanization: "jjitjeun", tags: ["adjective"] },
+      { korean: "짙은", english: "dark (in color)", romanization: "jiteun", tags: ["adjective"] },
       { korean: "무슨 색이에요?", english: "What color is it?", romanization: "museun saegieyo", tags: ["question"] },
-      { korean: "무슨 색을 좋아해요?", english: "What color do you like?", romanization: "museun saereul johaahaeyo", tags: ["question"] }
+      { korean: "무슨 색을 좋아해요?", english: "What color do you like?", romanization: "museun saekeul joahaeyo", tags: ["question"] }
     ],
 
     grammar: [
