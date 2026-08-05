@@ -106,6 +106,12 @@
       { korean: "후에",            english: "after; in (from now)", romanization: "hue",        example: "일년 후에 한국에 갈 거예요.",                                                    tags: ["particle", "time"] },
       { korean: "무슨",            english: "what (kind of); which — used before a noun", romanization: "museun", example: "무슨 요일이에요? / 무슨 색이에요?",                          tags: ["question"] },
 
+      // ── Particles ────────────────────────────────────────────
+      { korean: "에게",            english: "to (a person) — formal/written version of 한테", romanization: "ege", example: "선생님에게 편지를 보냈어요.",                          tags: ["particle", "grammar"] },
+
+      // ── Adjectives ───────────────────────────────────────────
+      { korean: "나쁘다",          english: "to be bad (ㅡ irregular: 나빠요)", romanization: "nappeuda", example: "날씨가 나쁘면 집에서 쉬어요.",                                  tags: ["adjective"] },
+
       // ── Vocabulary from July notes ───────────────────────────
       { korean: "독립",            english: "independence", romanization: "dongnip",             example: "독립 기념일이에요.",                                                             tags: ["noun", "culture"] },
       { korean: "기념일",          english: "anniversary, commemorative day", romanization: "ginyeomil", example: "결혼 기념일이에요.",                                                  tags: ["noun", "time"] },
