@@ -764,6 +764,85 @@
                 grid-template-columns: 1fr 1fr;
             }
         }
+
+        /* Conjugation Practice */
+        .conjugate-prompt {
+            background: linear-gradient(135deg, #c84b4b 0%, #a83d3d 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 1.6rem 2rem;
+            text-align: center;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 4px 12px rgba(200,75,75,0.3);
+        }
+
+        .conjugate-verb-text {
+            font-size: 2.8rem;
+            font-weight: 700;
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.2;
+            margin: 0.2rem 0 0.3rem;
+        }
+
+        .conjugate-form-row {
+            background: white;
+            border-radius: 10px;
+            padding: 0.85rem 1.1rem;
+            margin-bottom: 0.6rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+        }
+
+        .conjugate-label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #4a90a4;
+            margin-bottom: 0.1rem;
+        }
+
+        .conjugate-pattern {
+            font-size: 0.72rem;
+            color: #bbb;
+            font-family: monospace;
+            margin-bottom: 0.4rem;
+        }
+
+        .conjugate-input {
+            width: 100%;
+            padding: 0.6rem 0.85rem;
+            border: 2px solid #e0d5cc;
+            border-radius: 8px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 1rem;
+            color: #333;
+            outline: none;
+            transition: border-color 0.2s, background 0.2s;
+            box-sizing: border-box;
+        }
+
+        .conjugate-input:focus  { border-color: #4a90a4; }
+        .conjugate-input.correct   { border-color: #4a9a5a; background: #f0f8f0; }
+        .conjugate-input.incorrect { border-color: #c84b4b; background: #fff0f0; }
+
+        .conjugate-feedback { font-size: 0.82rem; margin-top: 0.35rem; font-weight: 500; }
+        .conjugate-feedback.correct   { color: #3d7a3d; }
+        .conjugate-feedback.incorrect { color: #a83d3d; }
+
+        .conj-btn {
+            flex: 1;
+            padding: 0.85rem 1rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Noto Sans KR', sans-serif;
+            color: white;
+            transition: all 0.25s ease;
+        }
+
+        .conj-btn.primary   { background: linear-gradient(135deg, #c84b4b, #a83d3d); }
+        .conj-btn.secondary { background: linear-gradient(135deg, #4a90a4, #3a6a7a); }
+        .conj-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
     </style>
 </head>
 <body>
@@ -917,6 +996,29 @@
                 <div id="grammarContent" class="grammar-list"></div>
             </div>
 
+            <!-- Conjugation Practice Screen -->
+            <div id="conjugateScreen" class="screen">
+                <div id="conjugateMain">
+                    <div class="conjugate-prompt" id="conjugatePrompt">
+                        <div style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.07em; opacity:0.8; margin-bottom:0.4rem;">Conjugate this verb</div>
+                        <div class="conjugate-verb-text" id="conjugateVerb">—</div>
+                        <div style="font-size:1rem; opacity:0.9; margin-top:0.2rem;" id="conjugateMeaning"></div>
+                    </div>
+                    <div style="font-size:0.78rem; color:#bbb; text-align:right; margin-bottom:0.75rem;" id="conjugateCounter"></div>
+                    <div id="conjugateForms"></div>
+                    <div style="display:flex; gap:0.75rem; margin-top:1.25rem;">
+                        <button class="conj-btn primary" id="conjCheckBtn" onclick="checkConjugations()">✓ Check</button>
+                        <button class="conj-btn secondary" id="conjNextBtn" onclick="nextConjugation()" style="display:none;">Next →</button>
+                    </div>
+                </div>
+                <div id="conjugateComplete" style="display:none; text-align:center; padding:2rem 0;">
+                    <div style="font-size:3rem; margin-bottom:0.75rem;">🎉</div>
+                    <h2 style="font-size:1.5rem; margin-bottom:0.5rem;">Session Complete!</h2>
+                    <p style="color:#888; margin-bottom:1.5rem;" id="conjFinalScore"></p>
+                    <button class="conj-btn primary" style="max-width:220px; margin:0 auto;" onclick="initConjugateScreen()">Practice Again</button>
+                </div>
+            </div>
+
             <!-- Stats Screen -->
             <div id="statsScreen" class="screen">
                 <h1 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Your Progress</h1>
@@ -971,6 +1073,7 @@
         <button class="nav-item" onclick="showScreen('study')">🎴 Study</button>
         <button class="nav-item" onclick="showScreen('phrases')">💬 Phrases</button>
         <button class="nav-item" onclick="showScreen('grammar')">📖 Grammar</button>
+        <button class="nav-item" onclick="showScreen('conjugate')">✏️ Conjugate</button>
         <button class="nav-item" onclick="showScreen('stats')">📊 Stats</button>
     </div>
 
@@ -1199,7 +1302,7 @@ const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
         }
 
         // ==================== UI RENDERING ====================
-        const NAV_SCREENS = ['home', 'wordStrength', 'study', 'phrases', 'grammar', 'stats'];
+        const NAV_SCREENS = ['home', 'wordStrength', 'study', 'phrases', 'grammar', 'conjugate', 'stats'];
 
         function showScreen(screen) {
             document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -1227,6 +1330,10 @@ const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
                 case 'grammar':
                     document.getElementById('grammarScreen').classList.add('active');
                     updateGrammarDisplay();
+                    break;
+                case 'conjugate':
+                    document.getElementById('conjugateScreen').classList.add('active');
+                    initConjugateScreen();
                     break;
                 case 'stats':
                     document.getElementById('statsScreen').classList.add('active');
@@ -2114,6 +2221,251 @@ const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
                 event.target.value = '';
             };
             reader.readAsText(file);
+        }
+
+        // ==================== CONJUGATION PRACTICE ====================
+
+        const CONJ_FORMS = [
+            { key: 'present',          label: '현재 — Present',               pattern: '-아/어요' },
+            { key: 'past',             label: '과거 — Past',                  pattern: '-았/었어요' },
+            { key: 'futurePlan',       label: '미래 계획 — Future (plan)',     pattern: '-(으)ㄹ 거예요' },
+            { key: 'futurePromise',    label: '미래 약속 — Future (promise)',  pattern: '-(으)ㄹ게요' },
+            { key: 'progressive',      label: '진행 — Progressive',           pattern: '-고 있어요' },
+            { key: 'honorificPresent', label: '존댓말 현재 — Honorific pres.', pattern: '-(으)세요' },
+            { key: 'honorificPast',    label: '존댓말 과거 — Honorific past',  pattern: '-(으)셨어요' },
+        ];
+
+        const CONJUGATION_VERBS = [
+            // ── Regular verbs ──────────────────────────────────────────
+            { korean:'가다',    english:'to go',
+              present:'가요', past:'갔어요', futurePlan:'갈 거예요', futurePromise:'갈게요',
+              progressive:'가고 있어요', honorificPresent:'가세요', honorificPast:'가셨어요' },
+
+            { korean:'오다',    english:'to come',
+              present:'와요', past:'왔어요', futurePlan:'올 거예요', futurePromise:'올게요',
+              progressive:'오고 있어요', honorificPresent:'오세요', honorificPast:'오셨어요' },
+
+            { korean:'보다',    english:'to see, to watch',
+              present:'봐요', past:'봤어요', futurePlan:'볼 거예요', futurePromise:'볼게요',
+              progressive:'보고 있어요', honorificPresent:'보세요', honorificPast:'보셨어요' },
+
+            { korean:'하다',    english:'to do',
+              present:'해요', past:'했어요', futurePlan:'할 거예요', futurePromise:'할게요',
+              progressive:'하고 있어요', honorificPresent:'하세요', honorificPast:'하셨어요' },
+
+            { korean:'공부하다', english:'to study',
+              present:'공부해요', past:'공부했어요', futurePlan:'공부할 거예요', futurePromise:'공부할게요',
+              progressive:'공부하고 있어요', honorificPresent:'공부하세요', honorificPast:'공부하셨어요' },
+
+            { korean:'일하다',  english:'to work',
+              present:'일해요', past:'일했어요', futurePlan:'일할 거예요', futurePromise:'일할게요',
+              progressive:'일하고 있어요', honorificPresent:'일하세요', honorificPast:'일하셨어요' },
+
+            { korean:'마시다',  english:'to drink',
+              present:'마셔요', past:'마셨어요', futurePlan:'마실 거예요', futurePromise:'마실게요',
+              progressive:'마시고 있어요', honorificPresent:'드세요', honorificPast:'드셨어요' },
+
+            { korean:'주다',    english:'to give',
+              present:'줘요', past:'줬어요', futurePlan:'줄 거예요', futurePromise:'줄게요',
+              progressive:'주고 있어요', honorificPresent:'주세요', honorificPast:'주셨어요' },
+
+            { korean:'배우다',  english:'to learn',
+              present:'배워요', past:'배웠어요', futurePlan:'배울 거예요', futurePromise:'배울게요',
+              progressive:'배우고 있어요', honorificPresent:'배우세요', honorificPast:'배우셨어요' },
+
+            { korean:'만나다',  english:'to meet',
+              present:'만나요', past:'만났어요', futurePlan:'만날 거예요', futurePromise:'만날게요',
+              progressive:'만나고 있어요', honorificPresent:'만나세요', honorificPast:'만나셨어요' },
+
+            { korean:'기다리다', english:'to wait',
+              present:'기다려요', past:'기다렸어요', futurePlan:'기다릴 거예요', futurePromise:'기다릴게요',
+              progressive:'기다리고 있어요', honorificPresent:'기다리세요', honorificPast:'기다리셨어요' },
+
+            // ── ㄹ irregular ───────────────────────────────────────────
+            { korean:'살다',    english:'to live',
+              present:'살아요', past:'살았어요', futurePlan:'살 거예요', futurePromise:'살게요',
+              progressive:'살고 있어요', honorificPresent:'사세요', honorificPast:'사셨어요' },
+
+            { korean:'알다',    english:'to know',
+              present:'알아요', past:'알았어요', futurePlan:'알 거예요', futurePromise:'알게요',
+              progressive:'알고 있어요', honorificPresent:'아세요', honorificPast:'아셨어요' },
+
+            { korean:'만들다',  english:'to make',
+              present:'만들어요', past:'만들었어요', futurePlan:'만들 거예요', futurePromise:'만들게요',
+              progressive:'만들고 있어요', honorificPresent:'만드세요', honorificPast:'만드셨어요' },
+
+            // ── ㄷ irregular ───────────────────────────────────────────
+            { korean:'듣다',    english:'to listen',
+              present:'들어요', past:'들었어요', futurePlan:'들을 거예요', futurePromise:'들을게요',
+              progressive:'듣고 있어요', honorificPresent:'들으세요', honorificPast:'들으셨어요' },
+
+            { korean:'걷다',    english:'to walk',
+              present:'걸어요', past:'걸었어요', futurePlan:'걸을 거예요', futurePromise:'걸을게요',
+              progressive:'걷고 있어요', honorificPresent:'걸으세요', honorificPast:'걸으셨어요' },
+
+            // ── ㅂ irregular ───────────────────────────────────────────
+            { korean:'돕다',    english:'to help',
+              present:'도와요', past:'도왔어요', futurePlan:'도울 거예요', futurePromise:'도울게요',
+              progressive:'돕고 있어요', honorificPresent:'도우세요', honorificPast:'도우셨어요' },
+
+            { korean:'춥다',    english:'to be cold (weather)',
+              present:'추워요', past:'추웠어요', futurePlan:'추울 거예요', futurePromise:'추울게요',
+              progressive:'춥고 있어요', honorificPresent:'추우세요', honorificPast:'추우셨어요' },
+
+            { korean:'덥다',    english:'to be hot (weather)',
+              present:'더워요', past:'더웠어요', futurePlan:'더울 거예요', futurePromise:'더울게요',
+              progressive:'덥고 있어요', honorificPresent:'더우세요', honorificPast:'더우셨어요' },
+
+            // ── ㅡ irregular ───────────────────────────────────────────
+            { korean:'쓰다',    english:'to write; to use; to wear (hat)',
+              present:'써요', past:'썼어요', futurePlan:'쓸 거예요', futurePromise:'쓸게요',
+              progressive:'쓰고 있어요', honorificPresent:'쓰세요', honorificPast:'쓰셨어요' },
+
+            { korean:'크다',    english:'to be big, to be large',
+              present:'커요', past:'컸어요', futurePlan:'클 거예요', futurePromise:'클게요',
+              progressive:'크고 있어요', honorificPresent:'크세요', honorificPast:'크셨어요' },
+
+            { korean:'바쁘다',  english:'to be busy',
+              present:'바빠요', past:'바빴어요', futurePlan:'바쁠 거예요', futurePromise:'바쁠게요',
+              progressive:'바쁘고 있어요', honorificPresent:'바쁘세요', honorificPast:'바쁘셨어요' },
+
+            // ── 르 irregular ───────────────────────────────────────────
+            { korean:'모르다',  english:'to not know',
+              present:'몰라요', past:'몰랐어요', futurePlan:'모를 거예요', futurePromise:'모를게요',
+              progressive:'모르고 있어요', honorificPresent:'모르세요', honorificPast:'모르셨어요' },
+
+            { korean:'부르다',  english:'to call; to sing',
+              present:'불러요', past:'불렀어요', futurePlan:'부를 거예요', futurePromise:'부를게요',
+              progressive:'부르고 있어요', honorificPresent:'부르세요', honorificPast:'부르셨어요' },
+
+            // ── Special honorific verbs ────────────────────────────────
+            { korean:'먹다',    english:'to eat',
+              present:'먹어요', past:'먹었어요', futurePlan:'먹을 거예요', futurePromise:'먹을게요',
+              progressive:'먹고 있어요', honorificPresent:'드세요', honorificPast:'드셨어요' },
+
+            { korean:'자다',    english:'to sleep',
+              present:'자요', past:'잤어요', futurePlan:'잘 거예요', futurePromise:'잘게요',
+              progressive:'자고 있어요', honorificPresent:'주무세요', honorificPast:'주무셨어요' },
+        ];
+
+        // Shuffle helper
+        function shuffleArray(arr) {
+            const a = arr.slice();
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
+
+        let conjQueue = [];
+        let conjIndex = 0;
+        let conjCorrect = 0;
+        let conjChecked = false;
+
+        function initConjugateScreen() {
+            conjQueue = shuffleArray(CONJUGATION_VERBS);
+            conjIndex = 0;
+            conjCorrect = 0;
+            conjChecked = false;
+            document.getElementById('conjugateMain').style.display = '';
+            document.getElementById('conjugateComplete').style.display = 'none';
+            loadConjugateVerb();
+        }
+
+        function loadConjugateVerb() {
+            conjChecked = false;
+            const verb = conjQueue[conjIndex];
+            document.getElementById('conjugateVerb').textContent = verb.korean;
+            document.getElementById('conjugateMeaning').textContent = verb.english;
+            document.getElementById('conjugateCounter').textContent =
+                `${conjIndex + 1} / ${conjQueue.length}`;
+
+            const container = document.getElementById('conjugateForms');
+            container.innerHTML = '';
+
+            CONJ_FORMS.forEach(form => {
+                const row = document.createElement('div');
+                row.className = 'conjugate-form-row';
+                row.innerHTML = `
+                    <div class="conjugate-label">${form.label}</div>
+                    <div class="conjugate-pattern">${form.pattern}</div>
+                    <input class="conjugate-input" type="text"
+                           data-key="${form.key}"
+                           placeholder="type in Korean…"
+                           autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                    <div class="conjugate-feedback" data-fb="${form.key}"></div>
+                `;
+                container.appendChild(row);
+            });
+
+            // Enter key on last field triggers check
+            const inputs = container.querySelectorAll('.conjugate-input');
+            inputs.forEach((inp, idx) => {
+                inp.addEventListener('keydown', e => {
+                    if (e.key === 'Enter') {
+                        if (idx < inputs.length - 1) inputs[idx + 1].focus();
+                        else checkConjugations();
+                    }
+                });
+            });
+
+            document.getElementById('conjCheckBtn').style.display = '';
+            document.getElementById('conjNextBtn').style.display = 'none';
+            if (inputs.length > 0) inputs[0].focus();
+        }
+
+        function normalizeKorean(str) {
+            return str.trim().replace(/\s+/g, ' ');
+        }
+
+        function checkConjugations() {
+            if (conjChecked) return;
+            conjChecked = true;
+
+            const verb = conjQueue[conjIndex];
+            let allCorrect = true;
+
+            CONJ_FORMS.forEach(form => {
+                const input = document.querySelector(`.conjugate-input[data-key="${form.key}"]`);
+                const fb    = document.querySelector(`.conjugate-feedback[data-fb="${form.key}"]`);
+                const answer = normalizeKorean(verb[form.key]);
+                const given  = normalizeKorean(input.value);
+
+                if (given === answer) {
+                    input.classList.add('correct');
+                    fb.textContent = '✓ Correct';
+                    fb.className = 'conjugate-feedback correct';
+                } else {
+                    input.classList.add('incorrect');
+                    fb.textContent = `✗ ${answer}`;
+                    fb.className = 'conjugate-feedback incorrect';
+                    allCorrect = false;
+                }
+                input.disabled = true;
+            });
+
+            if (allCorrect) conjCorrect++;
+
+            document.getElementById('conjCheckBtn').style.display = 'none';
+            document.getElementById('conjNextBtn').style.display = '';
+        }
+
+        function nextConjugation() {
+            conjIndex++;
+            if (conjIndex >= conjQueue.length) {
+                showConjugateComplete();
+            } else {
+                loadConjugateVerb();
+            }
+        }
+
+        function showConjugateComplete() {
+            document.getElementById('conjugateMain').style.display = 'none';
+            document.getElementById('conjugateComplete').style.display = '';
+            const pct = Math.round((conjCorrect / conjQueue.length) * 100);
+            document.getElementById('conjFinalScore').textContent =
+                `${conjCorrect} / ${conjQueue.length} verbs fully correct (${pct}%)`;
         }
 
         // ==================== INIT ====================
