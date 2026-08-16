@@ -25,8 +25,8 @@
   const unit = {
     id:    "ak1_u3",
     book:  "Active Korean 1",
-    unit:  3,
-    title: "Daily Life (Objects & Existence)",
+    unit:  5,
+    title: "Daily Life (일상생활)",
 
     vocabulary: [
       { korean: "있어요", english: "have/has; exist; is at a place", romanization: "isseoyo", tags: ["verb", "common"] },
@@ -58,7 +58,21 @@
       { korean: "여기요", english: "Excuse me! (to get the attention of staff/server)", romanization: "yeogiyo", example: "여기요! 물 주세요.", tags: ["expression"] },
       { korean: "잠깐만", english: "just a moment, wait a second", romanization: "jamkkanman", example: "잠깐만요!", tags: ["expression"] },
       { korean: "기다리다", english: "to wait", romanization: "gidarida", example: "잠깐 기다려 주세요.", tags: ["verb"] },
-      { korean: "여기 있어요", english: "here it is, here you go", romanization: "yeogi isseoyo", example: "여기 있어요!", tags: ["expression"] }
+      { korean: "여기 있어요", english: "here it is, here you go", romanization: "yeogi isseoyo", example: "여기 있어요!", tags: ["expression"] },
+
+      // ── Textbook Vocabulary (p.75) ──
+      { korean: "지금", english: "now, right now", romanization: "jigeum", tags: ["time"] },
+      { korean: "요즘", english: "these days, lately, nowadays", romanization: "yojeum", tags: ["time"] },
+      { korean: "아주", english: "very, quite", romanization: "aju", tags: ["adverb"] },
+      { korean: "안", english: "not (negation before verb)", romanization: "an", tags: ["adverb", "negation"] },
+      { korean: "포도", english: "grape(s)", romanization: "podo", tags: ["food", "fruit"] },
+      { korean: "바나나", english: "banana", romanization: "banana", tags: ["food", "fruit"] },
+      { korean: "스파게티", english: "spaghetti", romanization: "seupagetyi", tags: ["food"] },
+      { korean: "청소하다", english: "to clean, to tidy up", romanization: "cheongsohada", tags: ["verb", "household"] },
+      { korean: "빨래하다", english: "to do laundry", romanization: "ppallaehada", tags: ["verb", "household"] },
+
+      // ── Workbook Unit 5 New Words ──────────────────────────────
+      { korean: "여자 친구", english: "girlfriend", romanization: "yeoja chingu", example: "제 여자 친구예요.", tags: ["noun", "relationship"] }
     ],
 
     grammar: [

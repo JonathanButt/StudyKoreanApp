@@ -25,7 +25,7 @@
   const unit = {
     id:    "ak1_u5",
     book:  "Active Korean 1",
-    unit:  5,
+    unit:  7,
     title: "Appointment & Past Tense",
 
     vocabulary: [
@@ -80,8 +80,18 @@
       { korean: "쇼핑하다", english: "to go shopping", romanization: "syopinghada", example: "주말에 쇼핑했어요.", tags: ["verb"] },
       { korean: "시험을 보다", english: "to take a test/exam", romanization: "siheomeul boda", example: "내일 시험을 봐요.", tags: ["verb", "phrase"] },
       { korean: "시", english: "o'clock (hour counter, pure Korean numbers)", romanization: "si", example: "열 시에 만나요.", tags: ["counter", "time"] },
-      { korean: "유월", english: "June (irregular pronunciation of 6월)", romanization: "yuwol", example: "유월에 여행 갔어요.", tags: ["time"] },
-      { korean: "시월", english: "October (irregular pronunciation of 10월)", romanization: "siwol", example: "시월에 날씨가 좋아요.", tags: ["time"] },
+      { korean: "일월", english: "January (1월)", romanization: "irwol", tags: ["time", "month"] },
+      { korean: "이월", english: "February (2월)", romanization: "iwol", tags: ["time", "month"] },
+      { korean: "삼월", english: "March (3월)", romanization: "samwol", tags: ["time", "month"] },
+      { korean: "사월", english: "April (4월)", romanization: "sawol", tags: ["time", "month"] },
+      { korean: "오월", english: "May (5월)", romanization: "owol", tags: ["time", "month"] },
+      { korean: "유월", english: "June (6월 — irregular: not 육월)", romanization: "yuwol", example: "유월에 여행 갔어요.", tags: ["time", "month"] },
+      { korean: "칠월", english: "July (7월)", romanization: "chirwol", tags: ["time", "month"] },
+      { korean: "팔월", english: "August (8월)", romanization: "parwol", tags: ["time", "month"] },
+      { korean: "구월", english: "September (9월)", romanization: "guwol", tags: ["time", "month"] },
+      { korean: "시월", english: "October (10월 — irregular: not 십월)", romanization: "siwol", example: "시월에 날씨가 좋아요.", tags: ["time", "month"] },
+      { korean: "십일월", english: "November (11월)", romanization: "sibiwol", tags: ["time", "month"] },
+      { korean: "십이월", english: "December (12월)", romanization: "sibierwol", tags: ["time", "month"] },
       { korean: "그제", english: "day before yesterday", romanization: "geuje", example: "그제 뭐 했어요?", tags: ["time"] },
       { korean: "그저께", english: "day before yesterday (alternate form)", romanization: "geujeokke", example: "그저께 친구를 만났어요.", tags: ["time"] },
       { korean: "달리다", english: "to run (steadily)", romanization: "dallida", example: "매일 달려요.", tags: ["verb", "exercise"] },
@@ -91,7 +101,45 @@
       { korean: "하루", english: "one day (pure Korean)", romanization: "haru", example: "하루 종일 공부했어요.", tags: ["time"] },
       { korean: "하루 종일", english: "all day long", romanization: "haru jongil", example: "하루 종일 집에 있었어요.", tags: ["time"] },
       { korean: "작년", english: "last year", romanization: "jangnyeon", example: "작년에 한국에 갔어요.", tags: ["time"] },
-      { korean: "동안", english: "for (a duration); during", romanization: "dongan", example: "두 시간 동안 공부했어요.", tags: ["particle", "time"] }
+      { korean: "동안", english: "for (a duration); during", romanization: "dongan", example: "두 시간 동안 공부했어요.", tags: ["particle", "time"] },
+
+      // ── Textbook Vocabulary (p.103) — Unit 7 Places & Activities ──
+      { korean: "도서관", english: "library", romanization: "doseogwan", tags: ["noun", "place"] },
+      { korean: "수영하다", english: "to swim", romanization: "suyeonghada", example: "수영장에서 수영해요.", tags: ["verb", "exercise"] },
+      { korean: "일본어", english: "Japanese (language)", romanization: "ilboneo", tags: ["noun", "language"] },
+      { korean: "시험", english: "test, exam", romanization: "siheom", example: "내일 시험이 있어요.", tags: ["noun", "school"] },
+      { korean: "생일", english: "birthday", romanization: "saengil", example: "생일 축하해요!", tags: ["noun"] },
+      { korean: "파티", english: "party", romanization: "pati", example: "생일 파티를 해요.", tags: ["noun"] },
+      { korean: "추석", english: "Chuseok, Korean Thanksgiving (autumn harvest festival)", romanization: "chuseok", example: "추석에 가족과 만났어요.", tags: ["noun", "holiday"] },
+      { korean: "나", english: "I, me (casual)", romanization: "na", example: "나는 학생이에요.", tags: ["pronoun"] },
+      { korean: "숙제하다", english: "to do homework", romanization: "sukjehada", example: "숙제하고 있어요.", tags: ["verb", "school"] },
+      { korean: "약속이 있다", english: "to have an appointment, to have plans", romanization: "yaksogi itda", example: "오늘 약속이 있어요.", tags: ["phrase"] },
+      { korean: "시간이 있다", english: "to have time, to be available", romanization: "sigani itda", example: "내일 시간 있어요?", tags: ["phrase"] },
+      { korean: "버스를 타다", english: "to take a bus, to ride a bus", romanization: "beoseureul tada", tags: ["phrase", "verb"] },
+      { korean: "요리하다", english: "to cook", romanization: "yorihada", example: "저녁을 요리했어요.", tags: ["verb", "household"] },
+
+      // ── Workbook Unit 6 New Words ──────────────────────────────
+      { korean: "요가", english: "yoga", romanization: "yoga", example: "아침에 요가를 해요.", tags: ["noun", "exercise"] },
+
+      // ── Workbook Unit 7 New Words ──────────────────────────────
+      { korean: "이사", english: "moving (to a new home); relocation", romanization: "isa", example: "이사가 언제예요?", tags: ["noun"] },
+      { korean: "미안하다", english: "to be sorry; to feel bad", romanization: "mianhada", example: "미안해요!", tags: ["adjective"] },
+      { korean: "-들", english: "plural suffix (e.g. 친구들 = friends)", romanization: "-deul", example: "친구들이 왔어요.", tags: ["grammar", "particle"] },
+      { korean: "많이", english: "a lot; much (adverb, sounds like 마니)", romanization: "mani", example: "많이 먹었어요.", tags: ["adverb"] },
+      { korean: "선물", english: "gift; present", romanization: "seonmul", example: "선물을 받았어요.", tags: ["noun"] },
+      { korean: "꽃가게", english: "flower shop; florist", romanization: "kkotgage", example: "꽃가게에서 꽃을 샀어요.", tags: ["noun", "place"] },
+      { korean: "음료수", english: "beverage; soft drink", romanization: "eumnyosu", example: "음료수를 마셔요.", tags: ["noun", "beverage"] },
+      { korean: "드라마", english: "drama; TV drama", romanization: "deurama", example: "한국 드라마를 봐요.", tags: ["noun", "entertainment"] },
+      { korean: "가게", english: "shop; store", romanization: "gage", example: "가게에서 샀어요.", tags: ["noun", "place"] },
+      { korean: "수첩", english: "pocket diary; planner", romanization: "sucheop", example: "수첩에 메모해요.", tags: ["noun", "stationery"] },
+      { korean: "달력", english: "calendar", romanization: "dallyeok", example: "달력을 봐요.", tags: ["noun"] },
+      { korean: "케이크", english: "cake", romanization: "keikeu", example: "생일 케이크예요.", tags: ["noun", "food"] },
+      { korean: "밤", english: "night; late evening (after 저녁)", romanization: "bam", example: "밤에 공부해요.", tags: ["noun", "time"] },
+      { korean: "피곤하다", english: "to be tired; to be exhausted", romanization: "pigonhada", example: "피곤해요.", tags: ["adjective"] },
+      { korean: "딸기", english: "strawberry", romanization: "ttalgi", example: "딸기가 맛있어요.", tags: ["noun", "food", "fruit"] },
+      { korean: "조금", english: "a little; a bit", romanization: "jogeum", example: "조금만 기다려 주세요.", tags: ["adverb"] },
+      { korean: "노래", english: "song", romanization: "norae", example: "노래를 잘 해요.", tags: ["noun", "music"] },
+      { korean: "빵집", english: "bakery", romanization: "ppangjip", example: "빵집에서 빵을 사요.", tags: ["noun", "place"] }
     ],
 
     grammar: [

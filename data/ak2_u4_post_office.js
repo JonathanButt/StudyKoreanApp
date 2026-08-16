@@ -1,6 +1,6 @@
 // ============================================================
 //  Active Korean 2 — Unit 4: Post Office (우체국)
-//  File: data/ak2_u6_post_office.js
+//  File: data/ak2_u4_post_office.js
 //
 //  Textbook pages 56–67
 //  Class notes: 수업 6/12/26, 수업 6/17/26
@@ -27,7 +27,7 @@
   const unit = {
     id:    "ak2_u6",
     book:  "Active Korean 2",
-    unit:  6,
+    unit:  4,
     title: "Post Office (우체국)",
 
     vocabulary: [
@@ -121,9 +121,18 @@
       { korean: "인연",            english: "a fated connection, a tie between people", romanization: "inyeon", example: "우리는 인연이에요.",                                           tags: ["noun", "culture"] },
       { korean: "운명",            english: "destiny, fate", romanization: "unmyeong",           example: "운명이에요!",                                                                    tags: ["noun", "culture"] },
       { korean: "슬프다",          english: "to be sad (ㅡ irregular: 슬퍼요)", romanization: "seulpeuda", example: "슬프면 울어요.",                                                    tags: ["adjective", "emotion"] },
-      { korean: "예약하다",        english: "to make a reservation; to book", romanization: "yeyakhada", example: "호텔을 예약할 거예요.",                                                 tags: ["verb"] },
       { korean: "바다",            english: "ocean, sea", romanization: "bada",                  example: "여름에 바다에 갈 거예요.",                                                       tags: ["noun", "nature"] },
       { korean: "사진을 찍다",     english: "to take a photo/picture", romanization: "sajineul jjikda", example: "바다에서 사진을 찍을 거예요.",                                         tags: ["phrase", "verb"] },
+
+      // ── Textbook Vocabulary (p.57) — additional ──────────────
+      { korean: "끝나다",          english: "to be finished; to end (intransitive)",            romanization: "kkeunnada",          example: "일이 끝나면 전화할게요.",                          tags: ["verb"] },
+
+      // ── Countries (from p.63 practice table) ─────────────────
+      { korean: "일본",            english: "Japan",                                            romanization: "ilbon",              example: "일본으로 소포를 보낼 거예요.",                     tags: ["noun", "geography"] },
+      { korean: "중국",            english: "China",                                            romanization: "jungguk",            example: "중국으로 보내면 얼마예요?",                        tags: ["noun", "geography"] },
+
+      // ── Items used with N(으)로 (from p.59 practice) ─────────
+      { korean: "컴퓨터",          english: "computer",                                         romanization: "keompyuteo",         example: "컴퓨터로 일해요.",                                 tags: ["noun"] },
     ],
 
     grammar: [

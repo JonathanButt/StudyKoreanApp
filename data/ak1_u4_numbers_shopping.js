@@ -97,7 +97,20 @@
       { korean: "컴퓨터", english: "computer", romanization: "keompyuteo", example: "컴퓨터 한 대 있어요.", tags: ["noun", "electronics"] },
       { korean: "그럼", english: "then, well then, in that case", romanization: "geureom", example: "그럼 갈까요?", tags: ["expression"] },
       { korean: "모두", english: "all, altogether, everyone", romanization: "modu", example: "모두 얼마예요?", tags: ["adverb"] },
-      { korean: "몇", english: "how many, which (before a counter)", romanization: "myeot", example: "몇 개예요?", tags: ["question"] }
+      { korean: "몇", english: "how many, which (before a counter)", romanization: "myeot", example: "몇 개예요?", tags: ["question"] },
+
+      // ── Textbook Vocabulary (p.63) ──
+      { korean: "담배", english: "cigarette, tobacco", romanization: "dambae", tags: ["noun"] },
+      { korean: "카메라", english: "camera", romanization: "kamera", tags: ["noun", "electronics"] },
+      { korean: "신문", english: "newspaper", romanization: "sinmun", tags: ["noun"] },
+      { korean: "가방", english: "bag, purse", romanization: "gabang", tags: ["noun"] },
+      { korean: "모자", english: "hat, cap", romanization: "moja", tags: ["noun", "clothing"] },
+      { korean: "바지", english: "pants, trousers", romanization: "baji", tags: ["noun", "clothing"] },
+      { korean: "돈", english: "money", romanization: "don", tags: ["noun"] },
+
+      // ── Workbook Unit 4 New Words ──────────────────────────────
+      { korean: "치즈", english: "cheese", romanization: "chijeu", example: "치즈가 맛있어요.", tags: ["noun", "food"] },
+      { korean: "바나나", english: "banana", romanization: "banana", example: "바나나 두 개 주세요.", tags: ["noun", "food", "fruit"] }
     ],
 
     grammar: [

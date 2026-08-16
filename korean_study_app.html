@@ -1084,18 +1084,23 @@
     <script src="data/ak1_u5_appointment_past_tense.js"></script>
     <script src="data/ak1_u6_likes_dislikes_adjectives.js"></script>
     <script src="data/ak1_u7_locations_directions.js"></script>
-    <script src="data/ak1_u8_phone_calls_family.js"></script>
-    <script src="data/ak2_u1_review_family.js"></script>
-    <script src="data/ak2_u2_weather_seasons.js"></script>
-    <script src="data/ak2_u3_food_restaurants.js"></script>
-    <script src="data/ak2_u4_transportation_travel.js"></script>
-    <script src="data/ak2_u5_plans_activities.js"></script>
-    <script src="data/ak2_u6_post_office.js"></script>
-    <script src="data/ak2_u7_reservation.js"></script>
+    <script src="data/ak1_u9_phone_call.js"></script>
+    <script src="data/ak2_u1_family.js"></script>
+    <script src="data/ak2_u2_transportation_travel.js"></script>
+    <script src="data/ak2_u3_plans_reasons.js"></script>
+    <script src="data/ak2_u4_post_office.js"></script>
+    <script src="data/ak2_u5_reservation.js"></script>
+    <script src="data/ak2_u6_etiquette.js"></script>
+    <script src="data/ak_food_restaurants.js"></script>
     <script src="data/phrases.js"></script>
     <script>
 // Assembled from unit files above
-const KOREAN_DATA = { units: window.KOREAN_UNITS || [] };
+const KOREAN_DATA = { units: (window.KOREAN_UNITS || []).sort((a, b) => {
+    const bookA = parseInt((a.book.match(/\d+/) || [0])[0]);
+    const bookB = parseInt((b.book.match(/\d+/) || [0])[0]);
+    if (bookA !== bookB) return bookA - bookB;
+    return a.unit - b.unit;
+}) };
 
 
         // ==================== STATE MANAGEMENT ====================

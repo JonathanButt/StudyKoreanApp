@@ -1,6 +1,6 @@
 // ============================================================
-//  Active Korean 2 — Unit 4: Transportation & Travel
-//  File: data/ak2_u4_transportation_travel.js
+//  Active Korean 2 — Unit 2: Transportation & Travel
+//  File: data/ak2_u2_transportation_travel.js
 // ============================================================
 //
 //  HOW TO ADD VOCABULARY
@@ -25,10 +25,21 @@
   const unit = {
     id:    "ak2_u4",
     book:  "Active Korean 2",
-    unit:  4,
+    unit:  2,
     title: "Transportation & Travel",
 
     vocabulary: [
+
+      // ── Textbook Vocabulary (p.31) ────────────────────────────
+      { korean: "번",              english: "number (counter for buses/lines: 몇 번 버스? which number bus?)", romanization: "beon", example: "몇 번 버스를 타야 돼요?", tags: ["counter", "transportation"] },
+      { korean: "여자",            english: "woman; female",                                romanization: "yeoja",              example: "저 여자는 누구예요?",                              tags: ["noun"] },
+      { korean: "남대문시장",      english: "Namdaemun Market",                             romanization: "namdaemun sijang",   example: "남대문시장에 어떻게 가요?",                        tags: ["place"] },
+      { korean: "인사동",          english: "Insadong (traditional street in Seoul)",        romanization: "insadong",           example: "인사동에 가 봤어요?",                              tags: ["place"] },
+      { korean: "코엑스몰",        english: "COEX Mall",                                    romanization: "koekseu mol",        example: "코엑스몰에서 쇼핑해요.",                           tags: ["place"] },
+      { korean: "명동",            english: "Myeongdong (shopping district in Seoul)",       romanization: "myeongdong",         example: "명동에서 쇼핑해요.",                               tags: ["place"] },
+      { korean: "예술의 전당",     english: "Seoul Arts Center",                            romanization: "yesurui jeondang",   example: "예술의 전당에서 공연을 봐요.",                     tags: ["place"] },
+      { korean: "롯데월드",        english: "Lotte World (theme park in Seoul)",             romanization: "rotde woldeu",       example: "롯데월드에 가고 싶어요.",                          tags: ["place"] },
+
       { korean: "타다", english: "to ride, to take (transportation)", romanization: "tada", tags: ["verb", "transportation"] },
       { korean: "을/를 타다", english: "to ride/take + transportation", romanization: "eul/reul tada", tags: ["verb", "transportation"] },
       { korean: "지하철", english: "subway", romanization: "jihacheol", tags: ["transportation"] },
@@ -86,7 +97,41 @@
       { korean: "내려 주세요", english: "please drop me off here", romanization: "naeryeo juseyo", example: "여기서 내려 주세요.", tags: ["phrase", "transportation"] },
       { korean: "혼내다", english: "to scold, to give someone a piece of your mind", romanization: "honaeda", example: "친구를 혼냈어요.", tags: ["verb"] },
       { korean: "어떻게 해야 돼요?", english: "What should I do? What am I supposed to do?", romanization: "eotteoke haeya dwaeyo", example: "길을 잃었어요. 어떻게 해야 돼요?", tags: ["phrase"] },
-      { korean: "방학", english: "school break, vacation (for students)", romanization: "banghak", example: "여름 방학에 여행해요.", tags: ["noun", "time"] }
+      { korean: "방학", english: "school break, vacation (for students)", romanization: "banghak", example: "여름 방학에 여행해요.", tags: ["noun", "time"] },
+      { korean: "수영", english: "swimming", romanization: "suyeong", example: "수영을 배워요.", tags: ["noun", "sport"] },
+
+      { korean: "같이", english: "together; with (someone)",             romanization: "gachi",  example: "같이 가요!",        tags: ["adverb"] },
+
+      // ── Subway Stations (p.31) ───────────────────────────────
+      { korean: "회현역",         english: "Hoehyeon Station (Line 4)",                    romanization: "hoehyeon-nyeok",          tags: ["place", "transportation"] },
+      { korean: "시청역",         english: "City Hall Station (Lines 1, 2)",               romanization: "sicheong-nyeok",          tags: ["place", "transportation"] },
+      { korean: "안국역",         english: "Anguk Station (Line 3)",                       romanization: "angung-nyeok",            tags: ["place", "transportation"] },
+      { korean: "교대역",         english: "Seoul Nat'l Univ. of Education Station (Line 2, 3)", romanization: "gyodae-nyeok",     tags: ["place", "transportation"] },
+      { korean: "삼성역",         english: "Samseong Station (Line 2)",                    romanization: "samseong-nyeok",          tags: ["place", "transportation"] },
+      { korean: "잠실역",         english: "Jamsil Station (Lines 2, 8)",                  romanization: "jamsil-lyeok",            tags: ["place", "transportation"] },
+      { korean: "사당역",         english: "Sadang Station (Lines 2, 4)",                  romanization: "sadang-nyeok",            tags: ["place", "transportation"] },
+      { korean: "고속터미널역",   english: "Express Bus Terminal Station (Lines 3, 7, 9)", romanization: "gosok teo-mi-nel-lyeok",  tags: ["place", "transportation"] },
+      { korean: "동대문운동장역", english: "Dongdaemun Stadium Station (Lines 2, 4, 5)",   romanization: "dongdaemun undongjang-nyeok", tags: ["place", "transportation"] },
+      { korean: "명동역",         english: "Myeongdong Station (Line 4)",                  romanization: "myeongdong-nyeok",        tags: ["place", "transportation"] },
+      { korean: "충무로역",       english: "Chungmuro Station (Lines 3, 4)",               romanization: "chungmuro-nyeok",         tags: ["place", "transportation"] },
+      { korean: "서울대입구역",   english: "Seoul Nat'l Univ. Station (Line 2)",           romanization: "seoul-dae-igu-nyeok",     tags: ["place", "transportation"] },
+      { korean: "을지로3가역",    english: "Euljiro 3-ga Station (Lines 2, 3)",            romanization: "euljiro samga-nyeok",     tags: ["place", "transportation"] },
+      { korean: "남부터미널역",   english: "Nambu Bus Terminal Station (Line 3)",          romanization: "nambu teo-mi-nel-lyeok",  tags: ["place", "transportation"] },
+
+      // ── Famous Places (p.31) ─────────────────────────────────
+      { korean: "경주", english: "Gyeongju (ancient capital city)", romanization: "gyeongju", tags: ["noun", "place"] },
+      { korean: "부산", english: "Busan (Korea's second city)", romanization: "busan", tags: ["noun", "place"] },
+      { korean: "제주도", english: "Jeju Island", romanization: "jejudo", tags: ["noun", "place"] },
+
+      // ── Additional Expressions (p.43) — Taxi Phrases ─────────
+      { korean: "똑바로 가 주세요", english: "Go straight, please", romanization: "ttokbaro ga juseyo", tags: ["phrase", "transportation"] },
+      { korean: "좌회전해 주세요", english: "Turn left, please", romanization: "jwahoejeonhae juseyo", tags: ["phrase", "transportation"] },
+      { korean: "우회전해 주세요", english: "Turn right, please", romanization: "uhoejeonhae juseyo", tags: ["phrase", "transportation"] },
+
+      // ── Additional Expressions (p.43) — Types of Trains ──────
+      { korean: "고속전철", english: "KTX (Korea Train Express) — fastest train, up to 300km/h", romanization: "gosokjeonchul", tags: ["noun", "transportation"] },
+      { korean: "새마을호", english: "Saemaeul — second fastest intercity train", romanization: "saemaulho", tags: ["noun", "transportation"] },
+      { korean: "무궁화호", english: "Mugunghwa — regular intercity train, one level below Saemaeul", romanization: "mugunghwaho", tags: ["noun", "transportation"] }
     ],
 
     grammar: [

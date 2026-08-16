@@ -62,7 +62,39 @@
       { korean: "독일", english: "Germany", romanization: "dogil", tags: ["country"] },
       { korean: "러시아", english: "Russia", romanization: "reosia", tags: ["country"] },
       { korean: "캐나다", english: "Canada", romanization: "kaenada", tags: ["country"] },
-      { korean: "인도", english: "India", romanization: "indo", tags: ["country"] }
+      { korean: "인도", english: "India", romanization: "indo", tags: ["country"] },
+
+      // ── Textbook Vocabulary (p.37) ──
+      { korean: "여기", english: "here, this place", romanization: "yeogi", tags: ["location"] },
+      { korean: "국적", english: "nationality", romanization: "gukjeok", tags: ["noun"] },
+      { korean: "직업", english: "occupation, job", romanization: "jigeop", tags: ["noun"] },
+      { korean: "주소", english: "address", romanization: "juso", tags: ["noun"] },
+      { korean: "전화", english: "telephone, phone call", romanization: "jeonhwa", tags: ["noun"] },
+      { korean: "영국", english: "United Kingdom", romanization: "yeongguk", tags: ["country"] },
+
+      // ── Additional Expressions (p.49) — More Occupations ──
+      { korean: "연구원", english: "researcher", romanization: "yeonguwon", tags: ["occupation"] },
+      { korean: "사업가", english: "businessman", romanization: "saeopga", tags: ["occupation"] },
+      { korean: "소방관", english: "fire fighter", romanization: "sobanggwan", tags: ["occupation"] },
+      { korean: "경찰", english: "police (officer)", romanization: "gyeongchal", tags: ["occupation"] },
+      { korean: "배우", english: "actor, actress", romanization: "baeu", tags: ["occupation"] },
+      { korean: "우체부", english: "mail carrier, postman", romanization: "uchebu", tags: ["occupation"] },
+      { korean: "미용사", english: "hairdresser", romanization: "miyongsa", tags: ["occupation"] },
+      { korean: "과학자", english: "scientist", romanization: "gwahakja", tags: ["occupation"] },
+      { korean: "기술자", english: "technician, engineer", romanization: "gisullja", tags: ["occupation"] },
+      { korean: "교수", english: "professor", romanization: "gyosu", tags: ["occupation"] },
+      { korean: "변호사", english: "lawyer", romanization: "byeonhosa", tags: ["occupation"] },
+      { korean: "모델", english: "model", romanization: "model", tags: ["occupation"] },
+      { korean: "회계사", english: "accountant", romanization: "hoegyesa", tags: ["occupation"] },
+
+      // ── Workbook Unit 2 New Words ──────────────────────────────
+      { korean: "나무", english: "tree", romanization: "namu", example: "나무가 커요.", tags: ["noun", "nature"] },
+      { korean: "옷", english: "clothes, clothing", romanization: "ot", example: "옷이 예뻐요.", tags: ["noun", "clothing"] },
+      { korean: "꽃", english: "flower", romanization: "kkot", example: "꽃이 예뻐요.", tags: ["noun", "nature"] },
+      { korean: "명함", english: "business card", romanization: "myeongham", example: "명함 있어요?", tags: ["noun"] },
+      { korean: "우리", english: "we, our; my (used for family, home, country)", romanization: "uri", example: "우리 나라예요.", tags: ["pronoun", "possessive"] },
+      { korean: "친구", english: "friend", romanization: "chingu", example: "제 친구예요.", tags: ["noun"] },
+      { korean: "간호사", english: "nurse", romanization: "ganhosa", example: "저는 간호사예요.", tags: ["noun", "occupation"] }
     ],
 
     grammar: [

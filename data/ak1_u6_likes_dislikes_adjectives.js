@@ -89,7 +89,10 @@
       { korean: "아름다워요", english: "it's beautiful", romanization: "areumdawoyo", example: "꽃이 아름다워요.", tags: ["adjective"] },
       { korean: "입다", english: "to wear, to put on (clothing)", romanization: "ipda", example: "오늘 뭐 입었어요?", tags: ["verb", "clothing"] },
       { korean: "쓰다", english: "to wear (hat/glasses); also: to write, to use, to be bitter", romanization: "sseuda", example: "모자를 썼어요.", tags: ["verb", "clothing"] },
-      { korean: "모자를 쓰다", english: "to wear a hat", romanization: "mojareul sseuda", example: "모자를 쓰고 나갔어요.", tags: ["phrase", "clothing"] }
+      { korean: "모자를 쓰다", english: "to wear a hat", romanization: "mojareul sseuda", example: "모자를 쓰고 나갔어요.", tags: ["phrase", "clothing"] },
+
+      // ── Workbook Unit 6 New Words ──────────────────────────────
+      { korean: "힘들다", english: "to be hard; difficult; tough; exhausting (ㄹ irregular: 힘들어요)", romanization: "himdeulda", example: "한국어가 힘들어요?", tags: ["adjective"] }
     ],
 
     grammar: [

@@ -25,7 +25,7 @@
   const unit = {
     id:    "ak1_u7",
     book:  "Active Korean 1",
-    unit:  7,
+    unit:  8,
     title: "Locations & Directions",
 
     vocabulary: [
@@ -94,7 +94,36 @@
       { korean: "모르다", english: "to not know", romanization: "moreuda", example: "모르겠어요.", tags: ["verb"] },
       { korean: "약", english: "medicine", romanization: "yak", example: "약을 먹어요.", tags: ["noun"] },
       { korean: "아마도", english: "probably, perhaps", romanization: "amado", example: "아마도 거기 있을 거예요.", tags: ["adverb"] },
-      { korean: "장을 보다", english: "to go grocery shopping", romanization: "jangeul boda", example: "마트에서 장을 봐요.", tags: ["phrase", "verb"] }
+      { korean: "장을 보다", english: "to go grocery shopping", romanization: "jangeul boda", example: "마트에서 장을 봐요.", tags: ["phrase", "verb"] },
+
+      // ── Textbook Vocabulary (p.115) — Unit 8 Additional Places & Objects ──
+      { korean: "방", english: "room", romanization: "bang", example: "방에 있어요.", tags: ["noun", "place"] },
+      { korean: "세탁소", english: "dry cleaner's, laundry", romanization: "setakso", tags: ["noun", "place"] },
+      { korean: "교실", english: "classroom", romanization: "gyosil", tags: ["noun", "place"] },
+      { korean: "지하철역", english: "subway station", romanization: "jihacheollyeok", tags: ["noun", "place"] },
+      { korean: "가게", english: "store, shop", romanization: "gage", tags: ["noun", "place"] },
+      { korean: "호텔", english: "hotel", romanization: "hotel", tags: ["noun", "place"] },
+      { korean: "화장실", english: "restroom, bathroom", romanization: "hwajangsil", tags: ["noun", "place"] },
+
+      // ── Furniture & Household Items (p.115) ──
+      { korean: "냉장고", english: "refrigerator", romanization: "naengjeanggo", tags: ["noun", "furniture"] },
+      { korean: "책상", english: "desk", romanization: "chaeksang", tags: ["noun", "furniture"] },
+      { korean: "침대", english: "bed", romanization: "chimdae", tags: ["noun", "furniture"] },
+      { korean: "소파", english: "sofa, couch", romanization: "sopa", tags: ["noun", "furniture"] },
+      { korean: "의자", english: "chair", romanization: "uija", tags: ["noun", "furniture"] },
+      { korean: "옷장", english: "wardrobe, closet", romanization: "otjang", tags: ["noun", "furniture"] },
+      { korean: "아이스크림", english: "ice cream", romanization: "aiseukeurim", tags: ["noun", "food"] },
+      { korean: "걸리다", english: "to take (time); to be caught", romanization: "geollida", example: "얼마나 걸려요?", tags: ["verb"] },
+
+      // ── Workbook Unit 8 New Words ──────────────────────────────
+      { korean: "칠판", english: "blackboard; whiteboard; board", romanization: "chilpan", example: "칠판에 써요.", tags: ["noun", "education"] },
+      { korean: "사무실", english: "office", romanization: "samusil", example: "사무실에 있어요.", tags: ["noun", "place"] },
+      { korean: "고양이", english: "cat", romanization: "goyangi", example: "고양이가 귀여워요.", tags: ["noun", "animal"] },
+      { korean: "비행기", english: "airplane", romanization: "bihaenggi", example: "비행기를 타요.", tags: ["noun", "transportation"] },
+      { korean: "지하철", english: "subway", romanization: "jihacheol", example: "지하철을 타요.", tags: ["noun", "transportation"] },
+      { korean: "인천", english: "Incheon (city near Seoul, home of major airport)", romanization: "incheon", example: "인천에 가요.", tags: ["noun", "place"] },
+      { korean: "알다", english: "to know (ㄹ irregular: 알아요)", romanization: "alda", example: "그 사람을 알아요?", tags: ["verb"] },
+      { korean: "바다", english: "ocean; sea", romanization: "bada", example: "바다에 가고 싶어요.", tags: ["noun", "nature"] }
     ],
 
     grammar: [

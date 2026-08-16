@@ -1,7 +1,8 @@
 // ============================================================
-//  Active Korean 2 — Unit 5: Plans, Activities & Reasons
-//  File: data/ak2_u5_plans_activities.js
+//  Active Korean 2 — Unit 3: Reason (이유)
+//  File: data/ak2_u3_plans_reasons.js
 //
+//  Textbook pages 44–55
 //  Vocabulary drawn from class notes:
 //    수업 4/6/26, 수업 4/13/26, 수업 6/8/26
 // ============================================================
@@ -10,10 +11,28 @@
   const unit = {
     id:    "ak2_u5",
     book:  "Active Korean 2",
-    unit:  5,
-    title: "Plans, Activities & Reasons",
+    unit:  3,
+    title: "Reason (이유)",
 
     vocabulary: [
+
+      // ── Textbook Vocabulary (p.45) ────────────────────────────
+      { korean: "중국어",          english: "Chinese (language)",                               romanization: "junggugeo",          example: "중국어를 배워요.",                                  tags: ["noun", "language"] },
+      { korean: "프랑스어",        english: "French (language)",                                romanization: "peurangseueo",       example: "프랑스어를 해요?",                                 tags: ["noun", "language"] },
+      { korean: "요리",            english: "cooking; a dish",                                  romanization: "yori",               example: "요리를 못 해요.",                                  tags: ["noun", "activity"] },
+      { korean: "피아노",          english: "piano",                                            romanization: "piano",              example: "피아노를 쳐요.",                                   tags: ["noun", "instrument"] },
+      { korean: "기타",            english: "guitar",                                           romanization: "gita",               example: "기타를 칠 수 있어요.",                             tags: ["noun", "instrument"] },
+      { korean: "운전",            english: "driving",                                          romanization: "unjeon",             example: "운전을 못 해요.",                                  tags: ["noun", "activity"] },
+      { korean: "스키",            english: "skiing",                                           romanization: "seuki",              example: "스키를 타요.",                                     tags: ["noun", "sport"] },
+      { korean: "숙제",            english: "homework",                                         romanization: "sukje",              example: "숙제가 있어서 못 가요.",                           tags: ["noun", "school"] },
+      { korean: "수영장",          english: "swimming pool",                                    romanization: "suyeongjang",        example: "수영장에 가요.",                                   tags: ["noun", "place"] },
+      { korean: "남자",            english: "man; male",                                        romanization: "namja",              example: "저 남자는 누구예요?",                              tags: ["noun"] },
+      { korean: "뉴스",            english: "news",                                             romanization: "nyuseu",             example: "뉴스를 봐요.",                                     tags: ["noun", "media"] },
+      { korean: "드라마",          english: "drama; TV series",                                 romanization: "deurama",            example: "한국 드라마를 좋아해요.",                          tags: ["noun", "media"] },
+      { korean: "설렁탕",          english: "Seolleongtang (Korean ox bone soup)",              romanization: "seolleongtang",      example: "설렁탕을 먹어요.",                                 tags: ["noun", "food"] },
+      { korean: "찍다",            english: "to take (a picture); to stamp; to shoot",          romanization: "jjikda",             example: "사진을 찍어요.",                                   tags: ["verb"] },
+      { korean: "많다",            english: "to be many; to be a lot (adjective)",              romanization: "manta",              example: "사람이 많아요.",                                   tags: ["adjective"] },
+      { korean: "이번",            english: "this time; this (upcoming period)",                 romanization: "ibeon",              example: "이번 주에 뭐 해요?",                               tags: ["adverb", "time"] },
 
       // ── Greetings & Expressions ──────────────────────────────
       { korean: "오랜만이에요",    english: "It's been a while / Long time no see",           romanization: "oraenmanieyo",       example: "오랜만이에요! 잘 지냈어요?",                    tags: ["greeting", "expression"] },
@@ -116,6 +135,43 @@
       { korean: "때리다",          english: "to hit, to strike, to beat",                       romanization: "ttaerida",           example: "때리면 안 돼요.",                                  tags: ["verb"] },
       { korean: "넘어지다",        english: "to fall down, to trip and fall",                   romanization: "neomeojida",         example: "미끄러워서 넘어졌어요.",                           tags: ["verb"] },
       { korean: "자전거를 타다",   english: "to ride a bike",                                   romanization: "jajeongeoreul tada",  example: "공원에서 자전거를 타요.",                         tags: ["verb", "phrase"] },
+      { korean: "자전거",          english: "bicycle",                                          romanization: "jajeongeo",           example: "자전거를 타요.",                                   tags: ["noun", "transportation"] },
+
+      // ── Textbook Vocabulary (p.45) — additional ──────────────
+      { korean: "외국",            english: "foreign country; abroad",                          romanization: "oeguk",               example: "외국에 살고 싶어요.",                              tags: ["noun", "place"] },
+      { korean: "공항",            english: "airport",                                          romanization: "gonghang",            example: "공항에 가야 돼요.",                                tags: ["noun", "place"] },
+      { korean: "일",              english: "work; task; something going on",                   romanization: "il",                  example: "일이 있어서 못 가요.",                             tags: ["noun", "work"] },
+      { korean: "왜",              english: "why",                                              romanization: "wae",                 example: "왜 못 가요?",                                      tags: ["question"] },
+      { korean: "-들",             english: "plural suffix (e.g. 친구들 = friends)", romanization: "-deul", example: "친구들이 왔어요.", tags: ["grammar", "particle"] },
+
+      // ── Textbook Vocabulary (p.45) — additional ──────────────
+      { korean: "청소",            english: "cleaning; cleanup",                                romanization: "cheongso",           example: "청소를 해요.",                                     tags: ["noun", "household"] },
+      { korean: "들다",            english: "to be contained inside (in a bag/box)",            romanization: "deulda",             example: "가방에 뭐가 들었어요?",                            tags: ["verb"] },
+
+      // ── Additional from practice activities (pp.46, 52–53) ───
+      { korean: "영어",            english: "English (language)",                               romanization: "yeongeo",            example: "영어를 할 수 있어요?",                             tags: ["noun", "language"] },
+      { korean: "태권도",          english: "taekwondo",                                        romanization: "taegwondo",          example: "태권도를 배워요.",                                 tags: ["noun", "sport"] },
+      { korean: "주말",            english: "weekend",                                          romanization: "jumal",              example: "주말에 뭐 해요?",                                  tags: ["noun", "time"] },
+      { korean: "돈",              english: "money",                                            romanization: "don",                example: "돈이 없어서 못 사요.",                             tags: ["noun"] },
+      { korean: "카메라",          english: "camera",                                           romanization: "kamera",             example: "카메라가 없어서 사진을 못 찍어요.",                tags: ["noun"] },
+      { korean: "미국",            english: "the United States; America",                       romanization: "miguk",              example: "미국에 못 가요.",                                  tags: ["noun", "geography"] },
+      { korean: "운동",            english: "exercise; workout; sports",                        romanization: "undong",             example: "운동을 못 해요.",                                  tags: ["noun", "sport"] },
+      { korean: "불고기",          english: "bulgogi (Korean marinated grilled beef)",          romanization: "bulgogi",            example: "불고기를 좋아해요.",                               tags: ["noun", "food"] },
+      { korean: "비빔밥",          english: "bibimbap (Korean mixed rice bowl)",                romanization: "bibimbap",           example: "비빔밥을 먹어요.",                                 tags: ["noun", "food"] },
+
+      // ── Additional Expressions (p.55) — Apologies ────────────
+      { korean: "밤늦게 전화해서 죄송합니다",   english: "I'm sorry to call you so late at night",           romanization: "bamneutge jeonhwaeseo joesonghamnida",        tags: ["phrase", "apology"] },
+      { korean: "늦어서 미안해요",              english: "I'm sorry I'm late",                               romanization: "neujeoseo mianhaeyo",                         tags: ["phrase", "apology"] },
+      { korean: "늦어서 죄송합니다",            english: "I'm sorry I'm late (more polite)",                 romanization: "neujeoseo joesonghamnida",                    tags: ["phrase", "apology"] },
+      { korean: "연락이 늦어서 죄송합니다",     english: "I'm sorry to be contacting you so late",          romanization: "yeollagi neujeoseo joesonghamnida",           tags: ["phrase", "apology"] },
+      { korean: "약속을 못 지켜서 죄송합니다",  english: "I'm sorry I couldn't keep my promise/appointment", romanization: "yaksogeul mot jikyeoseo joesonghamnida",      tags: ["phrase", "apology"] },
+
+      // ── Additional Expressions (p.55) — Gratitude ────────────
+      { korean: "와 주셔서 감사합니다",         english: "Thank you for coming",                            romanization: "wa jusyeoseo gamsahamnida",                   tags: ["phrase", "gratitude"] },
+      { korean: "도와줘서 고마워요",            english: "Thank you for your help",                         romanization: "dowajwoseo gomawoyo",                         tags: ["phrase", "gratitude"] },
+      { korean: "도와주셔서 감사합니다",        english: "Thank you for your help (more polite)",           romanization: "dowajusyeoseo gamsahamnida",                  tags: ["phrase", "gratitude"] },
+      { korean: "전화해 주셔서 감사합니다",     english: "Thank you for calling",                           romanization: "jeonhwahae jusyeoseo gamsahamnida",          tags: ["phrase", "gratitude"] },
+      { korean: "초대해 주셔서 감사합니다",     english: "Thank you for inviting me",                       romanization: "chodaehae jusyeoseo gamsahamnida",           tags: ["phrase", "gratitude"] },
     ],
 
     grammar: [
